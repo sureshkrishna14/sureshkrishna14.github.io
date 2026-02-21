@@ -4,219 +4,707 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Suresh Krishna M | Digital Marketer</title>
-  <meta name="description" content="Portfolio + Freelancing services — Meta Ads, Google Ads, SEO, WordPress, Landing Pages, Canva Designs." />
+  <meta name="description" content="Suresh Krishna M — Digital Marketer (Meta Ads, Google Ads, SEO, WordPress). Portfolio + Freelancing in one site." />
+
+  <!-- Fonts (free) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b1220; --card:#111a2e; --muted:#9fb0d0; --text:#eaf0ff;
-      --accent:#5eead4; --accent2:#60a5fa; --line:#1e2a45;
+      --bg:#070A12;
+      --panel:#0B1020;
+      --panel2:#0D142A;
+      --text:#EAF0FF;
+      --muted:#A9B6D6;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:22px;
+
+      --g1:#5EEAD4;
+      --g2:#60A5FA;
+      --g3:#A78BFA;
+
+      --max:1120px;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% 10%, #11224a 0%, var(--bg) 55%) no-repeat, var(--bg);
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
+      background:
+        radial-gradient(900px 500px at 18% 10%, rgba(96,165,250,.22), transparent 55%),
+        radial-gradient(900px 500px at 82% 14%, rgba(94,234,212,.18), transparent 55%),
+        radial-gradient(900px 500px at 70% 85%, rgba(167,139,250,.18), transparent 55%),
+        linear-gradient(180deg, #050712 0%, var(--bg) 55%, #060817 100%);
+      overflow-x:hidden;
     }
+
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:1050px; margin:0 auto; padding:28px 18px 70px}
-    header{
-      display:flex; gap:14px; align-items:center; justify-content:space-between; flex-wrap:wrap;
-      border:1px solid var(--line); background:rgba(17,26,46,.6); backdrop-filter: blur(8px);
-      padding:14px 16px; border-radius:16px;
+    img{max-width:100%; display:block}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .section{padding:72px 0}
+    .subtle{color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:26px 0}
+    .pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px; border:1px solid var(--line);
+      border-radius:999px; background:rgba(255,255,255,.03);
+      color:var(--muted); font-weight:600; font-size:13px;
+      backdrop-filter: blur(10px);
     }
-    .brand{display:flex; flex-direction:column; line-height:1.1}
-    .brand b{font-size:18px}
-    .brand span{color:var(--muted); font-size:13px}
-    nav{display:flex; gap:10px; flex-wrap:wrap}
-    nav a{
-      padding:8px 10px; border:1px solid var(--line); border-radius:999px; color:var(--muted);
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background:linear-gradient(90deg, var(--g1), var(--g2));
+      box-shadow:0 0 18px rgba(94,234,212,.35);
     }
-    nav a:hover{border-color:rgba(94,234,212,.6); color:var(--text)}
-    .hero{
-      margin-top:18px; padding:26px; border-radius:20px;
-      border:1px solid var(--line); background: linear-gradient(180deg, rgba(17,26,46,.85), rgba(17,26,46,.55));
+
+    /* NAV */
+    .navWrap{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background:rgba(7,10,18,.55);
+      border-bottom:1px solid var(--line);
     }
-    .hero h1{margin:0 0 10px; font-size:34px}
-    .hero p{margin:0 0 18px; color:var(--muted); font-size:16px; line-height:1.6}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:240px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background:linear-gradient(135deg, rgba(94,234,212,.18), rgba(96,165,250,.18));
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 10px 35px rgba(0,0,0,.35);
+      display:grid; place-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:before{
+      content:"";
+      position:absolute; inset:-40px;
+      background:conic-gradient(from 180deg, rgba(94,234,212,.25), rgba(96,165,250,.25), rgba(167,139,250,.2), rgba(94,234,212,.25));
+      animation:spin 8s linear infinite;
+    }
+    .logo span{
+      position:relative; z-index:1;
+      font-weight:900;
+      letter-spacing:.5px;
+      background:linear-gradient(90deg, var(--g1), var(--g2));
+      -webkit-background-clip:text; background-clip:text;
+      color:transparent;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .brandText b{display:block; font-size:14px}
+    .brandText small{display:block; color:var(--muted); font-weight:600; font-size:12px; margin-top:2px}
+
+    .navLinks{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .navLinks a{
+      padding:9px 11px;
+      border:1px solid transparent;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+      transition:.2s ease;
+    }
+    .navLinks a:hover{
+      color:var(--text);
+      border-color:rgba(94,234,212,.25);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* BUTTONS */
+    .btnRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:11px 14px; border-radius:12px; border:1px solid var(--line);
-      background:rgba(11,18,32,.25); color:var(--text);
-      font-weight:600;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:800;
+      font-size:14px;
+      transition:.2s ease;
+      box-shadow:0 0 0 rgba(0,0,0,0);
     }
-    .btn:hover{border-color:rgba(96,165,250,.55)}
-    .btn.primary{background: linear-gradient(90deg, rgba(94,234,212,.18), rgba(96,165,250,.18)); border-color:rgba(94,234,212,.35)}
-    .grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:14px; margin-top:14px}
+    .btn:hover{transform:translateY(-1px); border-color:rgba(96,165,250,.35)}
+    .btnPrimary{
+      background:linear-gradient(90deg, rgba(94,234,212,.16), rgba(96,165,250,.16));
+      border-color:rgba(94,234,212,.25);
+      box-shadow:0 18px 60px rgba(96,165,250,.12);
+    }
+    .btnPrimary:hover{border-color:rgba(94,234,212,.45)}
+    .btnGhost{background:transparent}
+    .icon{
+      width:18px; height:18px; display:inline-block;
+      border-radius:6px;
+      background:linear-gradient(90deg, rgba(94,234,212,.25), rgba(96,165,250,.25));
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    /* HERO */
+    .hero{
+      padding:38px 0 12px;
+    }
+    .heroGrid{
+      display:grid; gap:18px;
+      grid-template-columns: 1fr;
+      align-items:stretch;
+    }
+    @media (min-width:980px){
+      .heroGrid{grid-template-columns: 1.2fr .8fr}
+    }
+
+    .heroCard{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(13,20,42,.78), rgba(11,16,32,.55));
+      border-radius:var(--radius2);
+      padding:26px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:radial-gradient(600px 260px at 20% 0%, rgba(94,234,212,.14), transparent 60%),
+                 radial-gradient(600px 260px at 80% 20%, rgba(96,165,250,.16), transparent 62%);
+      pointer-events:none;
+    }
+    .heroCard > *{position:relative}
+    h1{
+      margin:12px 0 12px;
+      font-size: clamp(30px, 3.5vw, 46px);
+      line-height:1.08;
+      letter-spacing:-.9px;
+    }
+    .lead{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.7;
+      max-width:62ch;
+    }
+
+    .statGrid{
+      display:grid; gap:12px; margin-top:18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .stat{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+      padding:14px;
+    }
+    .stat b{display:block; font-size:14px}
+    .stat span{display:block; margin-top:4px; color:var(--muted); font-size:12.5px; line-height:1.45}
+
+    /* CARDS / SECTIONS */
+    .grid{
+      display:grid; gap:16px;
+      grid-template-columns: repeat(12, minmax(0,1fr));
+    }
     .card{
       grid-column: span 12;
-      border:1px solid var(--line); background:rgba(17,26,46,.55); border-radius:18px; padding:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      border-radius:var(--radius);
+      padding:18px;
     }
-    @media (min-width:820px){
+    .cardTitle{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .cardTitle h2{margin:0; font-size:18px; letter-spacing:-.2px}
+    .tag{
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    @media (min-width:920px){
       .col6{grid-column: span 6}
       .col4{grid-column: span 4}
       .col8{grid-column: span 8}
     }
-    h2{margin:0 0 10px; font-size:20px}
-    .muted{color:var(--muted); line-height:1.6}
-    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
-    .chip{border:1px solid var(--line); color:var(--muted); padding:7px 10px; border-radius:999px; font-size:13px}
-    .list{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
-    .service{display:flex; flex-direction:column; gap:6px}
-    .service b{font-size:15px}
-    .service small{color:var(--muted); line-height:1.5}
-    .footer{margin-top:18px; color:var(--muted); font-size:13px; text-align:center}
-    .kpi{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    .kpi div{border:1px solid var(--line); padding:10px 12px; border-radius:14px; background:rgba(11,18,32,.25)}
-    .kpi b{display:block; font-size:14px}
-    .kpi span{font-size:12px; color:var(--muted)}
+
+    .chips{display:flex; flex-wrap:wrap; gap:9px}
+    .chip{
+      padding:9px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      color:var(--muted);
+      font-weight:800;
+      font-size:12.5px;
+    }
+    .chip strong{color:var(--text)}
+    .list{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.75; font-size:14px}
+
+    /* SERVICES */
+    .serviceCard{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      box-shadow:0 12px 40px rgba(0,0,0,.25);
+      height:100%;
+    }
+    .serviceCard b{display:block; font-size:15px; margin-bottom:8px}
+    .serviceCard p{margin:0; color:var(--muted); line-height:1.65; font-size:13.5px}
+    .serviceCard .mini{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px}
+    .mini span{
+      font-size:12px; color:var(--muted);
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.02);
+      padding:6px 8px; border-radius:999px;
+      font-weight:800;
+    }
+
+    /* TIMELINE */
+    .timeline{
+      position:relative;
+      padding-left:16px;
+      margin-top:12px;
+    }
+    .timeline:before{
+      content:"";
+      position:absolute; left:5px; top:2px; bottom:2px;
+      width:2px; background:rgba(255,255,255,.10);
+      border-radius:2px;
+    }
+    .tItem{position:relative; padding:10px 0 10px 18px}
+    .tItem:before{
+      content:"";
+      position:absolute; left:-1px; top:16px;
+      width:12px; height:12px; border-radius:50%;
+      background:linear-gradient(90deg, var(--g1), var(--g2));
+      box-shadow:0 0 18px rgba(96,165,250,.22);
+      border:1px solid rgba(255,255,255,.25);
+    }
+    .tItem b{display:block; font-size:14px}
+    .tItem small{color:var(--muted); font-weight:700}
+    .tItem p{margin:6px 0 0; color:var(--muted); line-height:1.65; font-size:13.5px}
+
+    /* CONTACT */
+    .contactBox{
+      border:1px solid rgba(255,255,255,.10);
+      background:linear-gradient(180deg, rgba(94,234,212,.08), rgba(96,165,250,.06));
+      border-radius:22px;
+      padding:18px;
+    }
+    .contactRow{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:12px
+    }
+    .linkPill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.12);
+      font-weight:800;
+      color:var(--text);
+    }
+    .linkPill span{color:var(--muted); font-weight:700}
+
+    /* FOOTER */
+    footer{
+      padding:28px 0 50px;
+      color:var(--muted);
+      text-align:center;
+      border-top:1px solid var(--line);
+    }
+
+    /* reveal animation */
+    .reveal{opacity:0; transform:translateY(10px); transition: .6s ease}
+    .reveal.show{opacity:1; transform:none}
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <b>Suresh Krishna M</b>
-        <span>Digital Marketer • Meta Ads • Google Ads • SEO • WordPress</span>
+
+  <!-- NAV -->
+  <div class="navWrap">
+    <div class="container">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo"><span>SK</span></div>
+          <div class="brandText">
+            <b>Suresh Krishna M</b>
+            <small>Digital Marketer • Ads • SEO • WordPress</small>
+          </div>
+        </div>
+
+        <div class="navLinks">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btnPrimary" href="https://wa.me/917305811343?text=Hi%20Suresh%2C%20I%20want%20to%20discuss%20Meta%20Ads%20%2F%20Google%20Ads%20%2F%20SEO%20%2F%20Landing%20Page." target="_blank" rel="noreferrer">
+            <span class="icon"></span> WhatsApp
+          </a>
+        </div>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <section class="hero" id="home">
-      <h1>Digital Marketer helping businesses generate leads.</h1>
-      <p>
-        I run performance-driven campaigns using <b>Meta Ads</b> and <b>Google Ads</b>, improve visibility through <b>SEO</b>,
-        and build <b>WordPress / static landing pages</b> that convert. I also support B2B promotion and <b>virtual online meeting expo</b> campaigns.
-      </p>
-
-      <div class="cta">
-        <a class="btn primary" href="https://wa.me/917305811343?text=Hi%20Suresh%2C%20I%20want%20to%20discuss%20Meta%20Ads%20%2F%20Google%20Ads%20%2F%20SEO%20%2F%20Landing%20Page." target="_blank" rel="noreferrer">
-          WhatsApp Me
-        </a>
-        <a class="btn" href="#portfolio">View Portfolio</a>
-        <a class="btn" href="mailto:msureshkrishna2001@gmail.com">Email</a>
-      </div>
-
-      <div class="kpi">
-        <div><b>B2B Lead Generation</b><span>Campaign planning + optimization</span></div>
-        <div><b>Landing Pages</b><span>WordPress / static pages</span></div>
-        <div><b>SEO + Keywords</b><span>On-page + keyword research</span></div>
-      </div>
-    </section>
-
-    <div class="grid">
-      <section class="card col6" id="about">
-        <h2>About</h2>
-        <p class="muted">
-          Hi, I’m <b>Suresh Krishna M</b>, a <b>Digital Marketer</b>. I work on end-to-end digital marketing —
-          from running paid campaigns to building landing pages and improving SEO. I focus on quality enquiries and measurable results.
-        </p>
-      </section>
-
-      <section class="card col6" id="skills">
-        <h2>Skills</h2>
-        <div class="chips">
-          <span class="chip">Meta Ads</span>
-          <span class="chip">Google Ads</span>
-          <span class="chip">SEO</span>
-          <span class="chip">WordPress</span>
-          <span class="chip">Static Landing Page</span>
-          <span class="chip">Canva Designs</span>
-          <span class="chip">Social Media Management</span>
-          <span class="chip">Keyword Generation</span>
-          <span class="chip">Virtual Online Meeting Expo</span>
-        </div>
-      </section>
-
-      <section class="card col8" id="services">
-        <h2>Freelancing Services</h2>
-        <div class="grid" style="margin-top:10px">
-          <div class="card col6 service">
-            <b>Meta Ads Lead Generation (WhatsApp / Leads)</b>
-            <small>Campaign structure, targeting, ad copies, creatives guidance, optimization, reporting.</small>
-          </div>
-          <div class="card col6 service">
-            <b>Google Ads (Search) for High-Intent Leads</b>
-            <small>Keyword research, ad groups, ad copy, extensions, optimization plan.</small>
-          </div>
-          <div class="card col6 service">
-            <b>SEO + Keyword Research</b>
-            <small>On-page checklist, meta titles/descriptions, keyword plan, internal linking suggestions.</small>
-          </div>
-          <div class="card col6 service">
-            <b>WordPress / Static Landing Page</b>
-            <small>Fast mobile-friendly landing page with CTA, WhatsApp button, basic SEO setup.</small>
-          </div>
-        </div>
-      </section>
-
-      <section class="card col4" id="contact">
-        <h2>Contact</h2>
-        <p class="muted" style="margin-top:0">
-          Let’s work together — jobs or freelance.
-        </p>
-        <ul class="list">
-          <li><b>WhatsApp:</b> <a href="https://wa.me/917305811343" target="_blank" rel="noreferrer">+91 7305811343</a></li>
-          <li><b>Email:</b> <a href="mailto:msureshkrishna2001@gmail.com">msureshkrishna2001@gmail.com</a></li>
-        </ul>
-        <div class="cta" style="margin-top:12px">
-          <a class="btn primary" href="https://wa.me/917305811343?text=Hi%20Suresh%2C%20I%20need%20a%20quote%20for%20digital%20marketing%20services." target="_blank" rel="noreferrer">Get a Quote</a>
-        </div>
-      </section>
-
-      <section class="card col12" id="portfolio">
-        <h2>Portfolio</h2>
-        <p class="muted" style="margin-top:0">
-          Add screenshots (blur sensitive data) to make this section stronger.
-        </p>
-        <div class="card" style="margin-top:10px">
-          <b>Project: Meta Ads — South American Campaign</b>
-          <ul class="list">
-            <li><b>Goal:</b> Generate qualified leads from South American countries</li>
-            <li><b>Work:</b> Targeting + ad copy + creatives guidance + optimization + reporting</li>
-            <li><b>Tools:</b> Meta Ads Manager, campaign testing, performance monitoring</li>
-          </ul>
-          <p class="muted" style="margin-top:10px">
-            (Optional) Add results here: leads count, CPL, countries targeted, meetings booked, etc.
-          </p>
-        </div>
-      </section>
-
-      <section class="card col12" id="resume">
-        <h2>Resume</h2>
-        <p class="muted" style="margin-top:0">
-          To add “Download Resume” button: upload your resume PDF into this repo and name it <b>resume.pdf</b>.
-          Then this button will work.
-        </p>
-        <div class="cta">
-          <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Download Resume (PDF)</a>
-        </div>
-        <hr style="border:0; border-top:1px solid var(--line); margin:16px 0">
-        <b>Experience</b>
-        <ul class="list">
-          <li>Digital Marketing Executive — Rajexim Group of Companies (June 2024 – Present)</li>
-        </ul>
-        <b>Education</b>
-        <ul class="list">
-          <li>B.E. Computer Science Engineering — Annamalai University (2019–2023)</li>
-        </ul>
-      </section>
-    </div>
-
-    <div class="footer">
-      © <span id="y"></span> Suresh Krishna M • Built on GitHub Pages
     </div>
   </div>
 
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="heroGrid">
+        <div class="heroCard reveal">
+          <div class="pill"><span class="dot"></span> Available for Freelance & Job Opportunities</div>
+
+          <h1>Performance-driven Digital Marketer for Lead Generation & Growth.</h1>
+
+          <p class="lead">
+            I help businesses get <b>qualified leads</b> through <b>Meta Ads</b> and <b>Google Ads</b>,
+            improve visibility using <b>SEO + Keyword Research</b>, and build fast <b>WordPress / static landing pages</b>
+            with strong CTA alignment. Experienced in <b>B2B promotion</b> and <b>virtual online meeting expo</b> campaigns.
+          </p>
+
+          <div class="btnRow">
+            <a class="btn btnPrimary" href="#portfolio"><span class="icon"></span> View Work</a>
+            <a class="btn" href="mailto:msureshkrishna2001@gmail.com"><span class="icon"></span> Email Me</a>
+            <a class="btn btnGhost" href="#resume"><span class="icon"></span> Resume</a>
+          </div>
+
+          <div class="statGrid">
+            <div class="stat">
+              <b>Meta Ads • WhatsApp Leads</b>
+              <span>Campaign setup, targeting, creatives, optimization & reporting</span>
+            </div>
+            <div class="stat">
+              <b>Google Ads (Search)</b>
+              <span>High-intent keywords, ad structure, CTR & conversion focus</span>
+            </div>
+            <div class="stat">
+              <b>SEO + Keywords</b>
+              <span>On-page SEO, meta optimization, keyword plan & content direction</span>
+            </div>
+            <div class="stat">
+              <b>WordPress Landing Pages</b>
+              <span>Fast pages, clean layout, CTA placement & basic SEO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroCard reveal" style="padding:20px">
+          <div class="cardTitle">
+            <h2>Quick Contact</h2>
+            <span class="tag">Fast Reply</span>
+          </div>
+
+          <div class="contactBox">
+            <div class="pill" style="margin-bottom:10px"><span class="dot"></span> Let’s discuss your requirement</div>
+            <div class="contactRow">
+              <a class="linkPill" href="https://wa.me/917305811343" target="_blank" rel="noreferrer">
+                WhatsApp <span>+91 7305811343</span>
+              </a>
+              <a class="linkPill" href="mailto:msureshkrishna2001@gmail.com">
+                Email <span>msureshkrishna2001@gmail.com</span>
+              </a>
+            </div>
+            <div class="divider"></div>
+            <p class="subtle" style="margin:0; line-height:1.7; font-weight:600">
+              Tip: Add your LinkedIn later for stronger profile.
+            </p>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="cardTitle">
+            <h2>What I can do</h2>
+            <span class="tag">2-in-1 Site</span>
+          </div>
+          <ul class="list">
+            <li>Freelancing services + job-ready portfolio</li>
+            <li>Clean sections + professional alignment</li>
+            <li>Resume PDF download support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + SKILLS -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="grid">
+        <div class="card col6 reveal">
+          <div class="cardTitle">
+            <h2>About</h2>
+            <span class="tag">Profile</span>
+          </div>
+          <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
+            Hi, I’m <b style="color:var(--text)">Suresh Krishna M</b>, a <b style="color:var(--text)">Digital Marketer</b>.
+            I work on paid campaigns, SEO, landing pages and social creatives — focusing on measurable outcomes like enquiries,
+            conversions and lead quality. I’m also experienced in <b style="color:var(--text)">B2B marketing</b> and
+            <b style="color:var(--text)">virtual online meeting expo campaigns</b>.
+          </p>
+          <div class="divider"></div>
+          <div class="chips">
+            <div class="chip"><strong>Focus:</strong> Lead Generation</div>
+            <div class="chip"><strong>Strength:</strong> Ads + Landing Pages</div>
+            <div class="chip"><strong>Style:</strong> Clean, Data-driven</div>
+          </div>
+        </div>
+
+        <div class="card col6 reveal" id="skills">
+          <div class="cardTitle">
+            <h2>Core Skills</h2>
+            <span class="tag">Tools & Work</span>
+          </div>
+          <div class="chips">
+            <div class="chip">Meta Ads</div>
+            <div class="chip">Google Ads</div>
+            <div class="chip">SEO</div>
+            <div class="chip">WordPress</div>
+            <div class="chip">Static Landing Page</div>
+            <div class="chip">Canva Designs</div>
+            <div class="chip">Social Media Management</div>
+            <div class="chip">Keyword Generation</div>
+            <div class="chip">Virtual Online Meeting Expo Specialist</div>
+          </div>
+          <div class="divider"></div>
+          <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
+            Want this site to look even more premium? Add: your photo, LinkedIn URL, and 2–3 campaign screenshots.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="cardTitle">
+        <h2 style="margin:0; font-size:22px; letter-spacing:-.4px">Freelancing Services</h2>
+        <span class="tag">Hire Me</span>
+      </div>
+      <p class="subtle" style="margin:10px 0 18px; line-height:1.8; font-weight:600; max-width:75ch">
+        Choose the service you need. I can also create a package based on your business goal (leads, sales, enquiries, brand).
+      </p>
+
+      <div class="grid">
+        <div class="card col6 reveal">
+          <div class="serviceCard">
+            <b>Meta Ads Lead Generation (WhatsApp / Leads)</b>
+            <p>Campaign setup, audience targeting, ad copy, creatives guidance, optimization & reporting.</p>
+            <div class="mini">
+              <span>WhatsApp CTA</span><span>Retargeting</span><span>Lead Quality</span><span>A/B Testing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card col6 reveal">
+          <div class="serviceCard">
+            <b>Google Ads (Search) — High Intent</b>
+            <p>Keyword research, ad groups, ad copy, extensions, budget strategy, optimization plan.</p>
+            <div class="mini">
+              <span>Keywords</span><span>Ad Structure</span><span>CTR Focus</span><span>Conversions</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card col6 reveal">
+          <div class="serviceCard">
+            <b>SEO + Keyword Research</b>
+            <p>On-page SEO checklist, meta optimization, keyword plan, internal linking suggestions.</p>
+            <div class="mini">
+              <span>On-page</span><span>Content Plan</span><span>Meta Tags</span><span>Local SEO</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card col6 reveal">
+          <div class="serviceCard">
+            <b>WordPress / Static Landing Page</b>
+            <p>Mobile-first page with clean layout, CTA placement, WhatsApp button, basic SEO setup.</p>
+            <div class="mini">
+              <span>Fast Page</span><span>CTA Layout</span><span>Forms</span><span>SEO Basics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="btnRow">
+        <a class="btn btnPrimary" href="https://wa.me/917305811343?text=Hi%20Suresh%2C%20I%20need%20a%20quote%20for%20Digital%20Marketing%20services." target="_blank" rel="noreferrer">
+          <span class="icon"></span> Get a Quote on WhatsApp
+        </a>
+        <a class="btn" href="#contact"><span class="icon"></span> Contact Section</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="cardTitle">
+        <h2 style="margin:0; font-size:22px; letter-spacing:-.4px">Portfolio</h2>
+        <span class="tag">Work Samples</span>
+      </div>
+      <p class="subtle" style="margin:10px 0 18px; line-height:1.8; font-weight:600; max-width:78ch">
+        Add 2–4 screenshots (campaign overview, leads screen, best ad creative, landing page). Blur sensitive numbers if needed.
+      </p>
+
+      <div class="grid">
+        <div class="card col8 reveal">
+          <div class="cardTitle">
+            <h2>Meta Ads — South American Campaign</h2>
+            <span class="tag">Lead Gen</span>
+          </div>
+          <ul class="list">
+            <li><b style="color:var(--text)">Goal:</b> Generate qualified leads from South American countries</li>
+            <li><b style="color:var(--text)">Work:</b> Targeting + ad copy + creatives direction + optimization + reporting</li>
+            <li><b style="color:var(--text)">Tools:</b> Meta Ads Manager, A/B testing, performance monitoring</li>
+          </ul>
+          <div class="divider"></div>
+          <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
+            If you share your real results (leads, CPL, meetings booked), I’ll add a “Results” block here to make it stronger.
+          </p>
+        </div>
+
+        <div class="card col4 reveal">
+          <div class="cardTitle">
+            <h2>What to add next</h2>
+            <span class="tag">Upgrade</span>
+          </div>
+          <ul class="list">
+            <li>1 landing page screenshot</li>
+            <li>2 best creatives</li>
+            <li>1 small case study with results</li>
+            <li>LinkedIn link</li>
+          </ul>
+          <div class="divider"></div>
+          <div class="btnRow">
+            <a class="btn btnPrimary" href="#contact"><span class="icon"></span> Send Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="section" id="resume">
+    <div class="container">
+      <div class="grid">
+        <div class="card col6 reveal">
+          <div class="cardTitle">
+            <h2>Resume</h2>
+            <span class="tag">PDF</span>
+          </div>
+          <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
+            Upload your resume in this repo and name it <b style="color:var(--text)">resume.pdf</b>.
+            Then the “Download Resume” button will work.
+          </p>
+          <div class="divider"></div>
+          <div class="btnRow">
+            <a class="btn btnPrimary" href="resume.pdf" target="_blank" rel="noreferrer"><span class="icon"></span> Download Resume</a>
+            <a class="btn" href="#contact"><span class="icon"></span> Contact Me</a>
+          </div>
+        </div>
+
+        <div class="card col6 reveal">
+          <div class="cardTitle">
+            <h2>Experience & Education</h2>
+            <span class="tag">Timeline</span>
+          </div>
+
+          <div class="timeline">
+            <div class="tItem">
+              <b>Digital Marketing Executive — Rajexim Group of Companies</b>
+              <small>June 2024 – Present</small>
+              <p>Meta Ads & Google Ads, SEO, WordPress updates, landing pages, creatives and lead generation support.</p>
+            </div>
+
+            <div class="tItem">
+              <b>B.E. Computer Science Engineering — Annamalai University</b>
+              <small>2019 – 2023</small>
+              <p>Foundation in web, tech, and systems — supporting marketing + automation workflows.</p>
+            </div>
+
+            <div class="tItem">
+              <b>Digital Marketing Specialist (Udemy)</b>
+              <small>In Progress</small>
+              <p>Upgrading with structured learning in paid ads, analytics, and strategy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="card reveal">
+        <div class="cardTitle">
+          <h2>Contact</h2>
+          <span class="tag">Let’s Work</span>
+        </div>
+
+        <p class="subtle" style="margin:0; line-height:1.8; font-weight:600; max-width:78ch">
+          For jobs or freelancing, message me with your requirement: business type, target location, and goal (leads/sales/traffic).
+        </p>
+
+        <div class="divider"></div>
+
+        <div class="contactRow">
+          <a class="linkPill" href="https://wa.me/917305811343?text=Hi%20Suresh%2C%20I%20want%20to%20discuss%20digital%20marketing%20requirements." target="_blank" rel="noreferrer">
+            WhatsApp <span>+91 7305811343</span>
+          </a>
+          <a class="linkPill" href="mailto:msureshkrishna2001@gmail.com">
+            Email <span>msureshkrishna2001@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
+          Want me to make it even more “grand”? I can add: profile photo section, testimonials, and 3 case studies layout.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> Suresh Krishna M • Built with GitHub Pages
+    </div>
+  </footer>
+
   <script>
+    // year
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    // reveal on scroll
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add("show"); io.unobserve(e.target); }
+      });
+    }, {threshold: .12});
+    els.forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
