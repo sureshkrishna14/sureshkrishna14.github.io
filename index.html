@@ -13,19 +13,19 @@
 
   <style>
     :root{
-      --bg:#070A12;
-      --panel:#0B1020;
-      --panel2:#0D142A;
-      --text:#EAF0FF;
-      --muted:#A9B6D6;
-      --line:rgba(255,255,255,.08);
-      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --bg:#f7f9ff;
+      --paper:#ffffff;
+      --paper2:#fbfcff;
+      --text:#0d1326;
+      --muted:#52607a;
+      --line:rgba(13,19,38,.10);
+      --shadow: 0 18px 45px rgba(13,19,38,.10);
       --radius:18px;
       --radius2:22px;
 
-      --g1:#5EEAD4;
-      --g2:#60A5FA;
-      --g3:#A78BFA;
+      --g1:#0ea5e9; /* sky */
+      --g2:#14b8a6; /* teal */
+      --g3:#7c3aed; /* violet */
 
       --max:1120px;
     }
@@ -37,90 +37,76 @@
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(900px 500px at 18% 10%, rgba(96,165,250,.22), transparent 55%),
-        radial-gradient(900px 500px at 82% 14%, rgba(94,234,212,.18), transparent 55%),
-        radial-gradient(900px 500px at 70% 85%, rgba(167,139,250,.18), transparent 55%),
-        linear-gradient(180deg, #050712 0%, var(--bg) 55%, #060817 100%);
+        radial-gradient(900px 520px at 20% 10%, rgba(14,165,233,.20), transparent 58%),
+        radial-gradient(900px 520px at 78% 10%, rgba(20,184,166,.18), transparent 58%),
+        radial-gradient(900px 520px at 72% 88%, rgba(124,58,237,.14), transparent 58%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 55%, #ffffff 100%);
       overflow-x:hidden;
     }
 
     a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
     .container{max-width:var(--max); margin:0 auto; padding:0 18px}
     .section{padding:72px 0}
     .subtle{color:var(--muted)}
-    .divider{height:1px; background:var(--line); margin:26px 0}
+    .divider{height:1px; background:var(--line); margin:22px 0}
     .pill{
       display:inline-flex; align-items:center; gap:10px;
       padding:10px 12px; border:1px solid var(--line);
-      border-radius:999px; background:rgba(255,255,255,.03);
-      color:var(--muted); font-weight:600; font-size:13px;
-      backdrop-filter: blur(10px);
+      border-radius:999px; background:rgba(255,255,255,.75);
+      color:var(--muted); font-weight:700; font-size:13px;
+      box-shadow:0 10px 30px rgba(13,19,38,.06);
+      backdrop-filter: blur(8px);
     }
     .dot{
       width:8px; height:8px; border-radius:50%;
-      background:linear-gradient(90deg, var(--g1), var(--g2));
-      box-shadow:0 0 18px rgba(94,234,212,.35);
+      background:linear-gradient(90deg, var(--g2), var(--g1));
+      box-shadow:0 0 16px rgba(14,165,233,.20);
     }
 
     /* NAV */
     .navWrap{
       position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background:rgba(7,10,18,.55);
+      backdrop-filter: blur(12px);
+      background:rgba(247,249,255,.75);
       border-bottom:1px solid var(--line);
     }
     .nav{
       display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      gap:14px;
+      padding:14px 0; gap:14px;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width:240px;
-    }
+    .brand{display:flex; align-items:center; gap:12px; min-width:250px}
     .logo{
       width:40px; height:40px; border-radius:14px;
-      background:linear-gradient(135deg, rgba(94,234,212,.18), rgba(96,165,250,.18));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:0 10px 35px rgba(0,0,0,.35);
+      background:linear-gradient(135deg, rgba(20,184,166,.20), rgba(14,165,233,.18));
+      border:1px solid rgba(13,19,38,.10);
+      box-shadow:0 12px 30px rgba(13,19,38,.10);
       display:grid; place-items:center;
-      position:relative;
-      overflow:hidden;
-    }
-    .logo:before{
-      content:"";
-      position:absolute; inset:-40px;
-      background:conic-gradient(from 180deg, rgba(94,234,212,.25), rgba(96,165,250,.25), rgba(167,139,250,.2), rgba(94,234,212,.25));
-      animation:spin 8s linear infinite;
+      position:relative; overflow:hidden;
     }
     .logo span{
-      position:relative; z-index:1;
       font-weight:900;
-      letter-spacing:.5px;
-      background:linear-gradient(90deg, var(--g1), var(--g2));
+      letter-spacing:.6px;
+      background:linear-gradient(90deg, var(--g2), var(--g1));
       -webkit-background-clip:text; background-clip:text;
       color:transparent;
     }
-    @keyframes spin{to{transform:rotate(360deg)}}
     .brandText b{display:block; font-size:14px}
-    .brandText small{display:block; color:var(--muted); font-weight:600; font-size:12px; margin-top:2px}
+    .brandText small{display:block; color:var(--muted); font-weight:700; font-size:12px; margin-top:2px}
 
-    .navLinks{
-      display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
+    .navLinks{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end}
     .navLinks a{
       padding:9px 11px;
       border:1px solid transparent;
       border-radius:999px;
       color:var(--muted);
-      font-weight:700;
+      font-weight:800;
       font-size:13px;
       transition:.2s ease;
     }
     .navLinks a:hover{
       color:var(--text);
-      border-color:rgba(94,234,212,.25);
-      background:rgba(255,255,255,.03);
+      border-color:rgba(14,165,233,.20);
+      background:rgba(255,255,255,.65);
     }
 
     /* BUTTONS */
@@ -129,33 +115,29 @@
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:12px 14px;
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
+      border:1px solid rgba(13,19,38,.12);
+      background:rgba(255,255,255,.75);
       color:var(--text);
-      font-weight:800;
+      font-weight:900;
       font-size:14px;
       transition:.2s ease;
-      box-shadow:0 0 0 rgba(0,0,0,0);
+      box-shadow:0 10px 25px rgba(13,19,38,.08);
     }
-    .btn:hover{transform:translateY(-1px); border-color:rgba(96,165,250,.35)}
+    .btn:hover{transform:translateY(-1px); border-color:rgba(14,165,233,.28)}
     .btnPrimary{
-      background:linear-gradient(90deg, rgba(94,234,212,.16), rgba(96,165,250,.16));
-      border-color:rgba(94,234,212,.25);
-      box-shadow:0 18px 60px rgba(96,165,250,.12);
+      background:linear-gradient(90deg, rgba(20,184,166,.18), rgba(14,165,233,.16));
+      border-color:rgba(20,184,166,.28);
     }
-    .btnPrimary:hover{border-color:rgba(94,234,212,.45)}
-    .btnGhost{background:transparent}
+    .btnGhost{background:transparent; box-shadow:none}
     .icon{
       width:18px; height:18px; display:inline-block;
       border-radius:6px;
-      background:linear-gradient(90deg, rgba(94,234,212,.25), rgba(96,165,250,.25));
-      border:1px solid rgba(255,255,255,.12);
+      background:linear-gradient(90deg, rgba(20,184,166,.24), rgba(14,165,233,.22));
+      border:1px solid rgba(13,19,38,.10);
     }
 
     /* HERO */
-    .hero{
-      padding:38px 0 12px;
-    }
+    .hero{padding:38px 0 12px}
     .heroGrid{
       display:grid; gap:18px;
       grid-template-columns: 1fr;
@@ -164,24 +146,24 @@
     @media (min-width:980px){
       .heroGrid{grid-template-columns: 1.2fr .8fr}
     }
-
     .heroCard{
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(13,20,42,.78), rgba(11,16,32,.55));
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.70));
       border-radius:var(--radius2);
       padding:26px;
       box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
+      position:relative; overflow:hidden;
     }
     .heroCard:before{
       content:"";
       position:absolute; inset:-2px;
-      background:radial-gradient(600px 260px at 20% 0%, rgba(94,234,212,.14), transparent 60%),
-                 radial-gradient(600px 260px at 80% 20%, rgba(96,165,250,.16), transparent 62%);
+      background:
+        radial-gradient(700px 260px at 15% 0%, rgba(20,184,166,.12), transparent 60%),
+        radial-gradient(700px 260px at 85% 20%, rgba(14,165,233,.14), transparent 62%);
       pointer-events:none;
     }
     .heroCard > *{position:relative}
+
     h1{
       margin:12px 0 12px;
       font-size: clamp(30px, 3.5vw, 46px);
@@ -192,8 +174,9 @@
       margin:0 0 18px;
       color:var(--muted);
       font-size:15.5px;
-      line-height:1.7;
+      line-height:1.75;
       max-width:62ch;
+      font-weight:600;
     }
 
     .statGrid{
@@ -202,41 +185,36 @@
     }
     .stat{
       border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.75);
       border-radius:16px;
       padding:14px;
+      box-shadow:0 10px 22px rgba(13,19,38,.06);
     }
     .stat b{display:block; font-size:14px}
-    .stat span{display:block; margin-top:4px; color:var(--muted); font-size:12.5px; line-height:1.45}
+    .stat span{display:block; margin-top:4px; color:var(--muted); font-size:12.5px; line-height:1.45; font-weight:600}
 
-    /* CARDS / SECTIONS */
-    .grid{
-      display:grid; gap:16px;
-      grid-template-columns: repeat(12, minmax(0,1fr));
-    }
+    /* GRID / CARDS */
+    .grid{display:grid; gap:16px; grid-template-columns: repeat(12, minmax(0,1fr))}
     .card{
       grid-column: span 12;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
+      background:rgba(255,255,255,.78);
       border-radius:var(--radius);
       padding:18px;
+      box-shadow:0 14px 35px rgba(13,19,38,.06);
     }
-    .cardTitle{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      margin-bottom:10px;
-    }
+    .cardTitle{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:10px}
     .cardTitle h2{margin:0; font-size:18px; letter-spacing:-.2px}
     .tag{
       padding:7px 10px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.03);
+      border:1px solid rgba(13,19,38,.10);
+      background:rgba(255,255,255,.75);
       color:var(--muted);
       font-size:12px;
-      font-weight:800;
+      font-weight:900;
       white-space:nowrap;
     }
-
     @media (min-width:920px){
       .col6{grid-column: span 6}
       .col4{grid-column: span 4}
@@ -247,45 +225,39 @@
     .chip{
       padding:9px 11px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
+      border:1px solid rgba(13,19,38,.10);
+      background:rgba(255,255,255,.70);
       color:var(--muted);
-      font-weight:800;
+      font-weight:900;
       font-size:12.5px;
     }
-    .chip strong{color:var(--text)}
-    .list{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.75; font-size:14px}
+    .list{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.75; font-size:14px; font-weight:600}
 
     /* SERVICES */
     .serviceCard{
       padding:18px;
       border-radius:18px;
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
-      box-shadow:0 12px 40px rgba(0,0,0,.25);
+      background:linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.72));
       height:100%;
     }
     .serviceCard b{display:block; font-size:15px; margin-bottom:8px}
-    .serviceCard p{margin:0; color:var(--muted); line-height:1.65; font-size:13.5px}
-    .serviceCard .mini{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px}
+    .serviceCard p{margin:0; color:var(--muted); line-height:1.65; font-size:13.5px; font-weight:600}
+    .mini{margin-top:12px; display:flex; flex-wrap:wrap; gap:8px}
     .mini span{
       font-size:12px; color:var(--muted);
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.02);
+      border:1px solid rgba(13,19,38,.10);
+      background:rgba(255,255,255,.70);
       padding:6px 8px; border-radius:999px;
-      font-weight:800;
+      font-weight:900;
     }
 
     /* TIMELINE */
-    .timeline{
-      position:relative;
-      padding-left:16px;
-      margin-top:12px;
-    }
+    .timeline{position:relative; padding-left:16px; margin-top:12px}
     .timeline:before{
       content:"";
       position:absolute; left:5px; top:2px; bottom:2px;
-      width:2px; background:rgba(255,255,255,.10);
+      width:2px; background:rgba(13,19,38,.12);
       border-radius:2px;
     }
     .tItem{position:relative; padding:10px 0 10px 18px}
@@ -293,51 +265,48 @@
       content:"";
       position:absolute; left:-1px; top:16px;
       width:12px; height:12px; border-radius:50%;
-      background:linear-gradient(90deg, var(--g1), var(--g2));
-      box-shadow:0 0 18px rgba(96,165,250,.22);
-      border:1px solid rgba(255,255,255,.25);
+      background:linear-gradient(90deg, var(--g2), var(--g1));
+      box-shadow:0 0 16px rgba(14,165,233,.18);
+      border:1px solid rgba(13,19,38,.12);
     }
     .tItem b{display:block; font-size:14px}
-    .tItem small{color:var(--muted); font-weight:700}
-    .tItem p{margin:6px 0 0; color:var(--muted); line-height:1.65; font-size:13.5px}
+    .tItem small{color:var(--muted); font-weight:800}
+    .tItem p{margin:6px 0 0; color:var(--muted); line-height:1.65; font-size:13.5px; font-weight:600}
 
     /* CONTACT */
     .contactBox{
-      border:1px solid rgba(255,255,255,.10);
-      background:linear-gradient(180deg, rgba(94,234,212,.08), rgba(96,165,250,.06));
+      border:1px solid rgba(13,19,38,.10);
+      background:linear-gradient(180deg, rgba(20,184,166,.10), rgba(14,165,233,.08));
       border-radius:22px;
       padding:18px;
     }
-    .contactRow{
-      display:flex; flex-wrap:wrap; gap:10px; margin-top:12px
-    }
+    .contactRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
     .linkPill{
       display:inline-flex; align-items:center; gap:10px;
       padding:10px 12px;
       border-radius:14px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(0,0,0,.12);
-      font-weight:800;
+      border:1px solid rgba(13,19,38,.12);
+      background:rgba(255,255,255,.80);
+      font-weight:900;
       color:var(--text);
+      box-shadow:0 10px 25px rgba(13,19,38,.06);
     }
-    .linkPill span{color:var(--muted); font-weight:700}
+    .linkPill span{color:var(--muted); font-weight:800}
 
-    /* FOOTER */
     footer{
       padding:28px 0 50px;
       color:var(--muted);
       text-align:center;
       border-top:1px solid var(--line);
+      font-weight:700;
     }
 
-    /* reveal animation */
-    .reveal{opacity:0; transform:translateY(10px); transition: .6s ease}
+    .reveal{opacity:0; transform:translateY(10px); transition:.6s ease}
     .reveal.show{opacity:1; transform:none}
   </style>
 </head>
 
 <body>
-
   <!-- NAV -->
   <div class="navWrap">
     <div class="container">
@@ -346,7 +315,7 @@
           <div class="logo"><span>SK</span></div>
           <div class="brandText">
             <b>Suresh Krishna M</b>
-            <small>Digital Marketer • Ads • SEO • WordPress</small>
+            <small>Digital Marketer • Meta Ads • Google Ads • SEO • WordPress</small>
           </div>
         </div>
 
@@ -372,7 +341,7 @@
         <div class="heroCard reveal">
           <div class="pill"><span class="dot"></span> Available for Freelance & Job Opportunities</div>
 
-          <h1>Performance-driven Digital Marketer for Lead Generation & Growth.</h1>
+          <h1>Professional Digital Marketer for Lead Generation & Growth.</h1>
 
           <p class="lead">
             I help businesses get <b>qualified leads</b> through <b>Meta Ads</b> and <b>Google Ads</b>,
@@ -423,7 +392,7 @@
               </a>
             </div>
             <div class="divider"></div>
-            <p class="subtle" style="margin:0; line-height:1.7; font-weight:600">
+            <p class="subtle" style="margin:0; line-height:1.7; font-weight:700">
               Tip: Add your LinkedIn later for stronger profile.
             </p>
           </div>
@@ -453,18 +422,12 @@
             <h2>About</h2>
             <span class="tag">Profile</span>
           </div>
-          <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
+          <p class="subtle" style="margin:0; line-height:1.85; font-weight:700">
             Hi, I’m <b style="color:var(--text)">Suresh Krishna M</b>, a <b style="color:var(--text)">Digital Marketer</b>.
             I work on paid campaigns, SEO, landing pages and social creatives — focusing on measurable outcomes like enquiries,
             conversions and lead quality. I’m also experienced in <b style="color:var(--text)">B2B marketing</b> and
-            <b style="color:var(--text)">virtual online meeting expo campaigns</b>.
+            <b style="color:var(--text)">virtual online meeting expo</b> campaigns.
           </p>
-          <div class="divider"></div>
-          <div class="chips">
-            <div class="chip"><strong>Focus:</strong> Lead Generation</div>
-            <div class="chip"><strong>Strength:</strong> Ads + Landing Pages</div>
-            <div class="chip"><strong>Style:</strong> Clean, Data-driven</div>
-          </div>
         </div>
 
         <div class="card col6 reveal" id="skills">
@@ -484,8 +447,8 @@
             <div class="chip">Virtual Online Meeting Expo Specialist</div>
           </div>
           <div class="divider"></div>
-          <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
-            Want this site to look even more premium? Add: your photo, LinkedIn URL, and 2–3 campaign screenshots.
+          <p class="subtle" style="margin:0; line-height:1.8; font-weight:700">
+            Upload screenshots (work1.jpg, work2.jpg) and I’ll add a professional portfolio gallery.
           </p>
         </div>
       </div>
@@ -499,7 +462,7 @@
         <h2 style="margin:0; font-size:22px; letter-spacing:-.4px">Freelancing Services</h2>
         <span class="tag">Hire Me</span>
       </div>
-      <p class="subtle" style="margin:10px 0 18px; line-height:1.8; font-weight:600; max-width:75ch">
+      <p class="subtle" style="margin:10px 0 18px; line-height:1.9; font-weight:700; max-width:75ch">
         Choose the service you need. I can also create a package based on your business goal (leads, sales, enquiries, brand).
       </p>
 
@@ -563,8 +526,8 @@
         <h2 style="margin:0; font-size:22px; letter-spacing:-.4px">Portfolio</h2>
         <span class="tag">Work Samples</span>
       </div>
-      <p class="subtle" style="margin:10px 0 18px; line-height:1.8; font-weight:600; max-width:78ch">
-        Add 2–4 screenshots (campaign overview, leads screen, best ad creative, landing page). Blur sensitive numbers if needed.
+      <p class="subtle" style="margin:10px 0 18px; line-height:1.9; font-weight:700; max-width:78ch">
+        Add screenshots (campaign overview, leads screen, best ad creative, landing page). Blur sensitive numbers if needed.
       </p>
 
       <div class="grid">
@@ -579,21 +542,21 @@
             <li><b style="color:var(--text)">Tools:</b> Meta Ads Manager, A/B testing, performance monitoring</li>
           </ul>
           <div class="divider"></div>
-          <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
-            If you share your real results (leads, CPL, meetings booked), I’ll add a “Results” block here to make it stronger.
+          <p class="subtle" style="margin:0; line-height:1.9; font-weight:700">
+            Share your results (leads, CPL, meetings booked) and I’ll add a “Results” block here.
           </p>
         </div>
 
         <div class="card col4 reveal">
           <div class="cardTitle">
-            <h2>What to add next</h2>
-            <span class="tag">Upgrade</span>
+            <h2>Next upgrades</h2>
+            <span class="tag">Improve</span>
           </div>
           <ul class="list">
-            <li>1 landing page screenshot</li>
-            <li>2 best creatives</li>
-            <li>1 small case study with results</li>
-            <li>LinkedIn link</li>
+            <li>Add LinkedIn link</li>
+            <li>Add 2 creatives screenshots</li>
+            <li>Add 1 landing page screenshot</li>
+            <li>Add Resume PDF</li>
           </ul>
           <div class="divider"></div>
           <div class="btnRow">
@@ -613,7 +576,7 @@
             <h2>Resume</h2>
             <span class="tag">PDF</span>
           </div>
-          <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
+          <p class="subtle" style="margin:0; line-height:1.9; font-weight:700">
             Upload your resume in this repo and name it <b style="color:var(--text)">resume.pdf</b>.
             Then the “Download Resume” button will work.
           </p>
@@ -640,13 +603,13 @@
             <div class="tItem">
               <b>B.E. Computer Science Engineering — Annamalai University</b>
               <small>2019 – 2023</small>
-              <p>Foundation in web, tech, and systems — supporting marketing + automation workflows.</p>
+              <p>Tech foundation supporting marketing + automation workflows.</p>
             </div>
 
             <div class="tItem">
               <b>Digital Marketing Specialist (Udemy)</b>
               <small>In Progress</small>
-              <p>Upgrading with structured learning in paid ads, analytics, and strategy.</p>
+              <p>Learning advanced strategy, analytics, and paid campaign optimization.</p>
             </div>
           </div>
         </div>
@@ -663,7 +626,7 @@
           <span class="tag">Let’s Work</span>
         </div>
 
-        <p class="subtle" style="margin:0; line-height:1.8; font-weight:600; max-width:78ch">
+        <p class="subtle" style="margin:0; line-height:1.9; font-weight:700; max-width:78ch">
           For jobs or freelancing, message me with your requirement: business type, target location, and goal (leads/sales/traffic).
         </p>
 
@@ -677,12 +640,6 @@
             Email <span>msureshkrishna2001@gmail.com</span>
           </a>
         </div>
-
-        <div class="divider"></div>
-
-        <p class="subtle" style="margin:0; line-height:1.8; font-weight:600">
-          Want me to make it even more “grand”? I can add: profile photo section, testimonials, and 3 case studies layout.
-        </p>
       </div>
     </div>
   </section>
@@ -694,10 +651,7 @@
   </footer>
 
   <script>
-    // year
     document.getElementById("y").textContent = new Date().getFullYear();
-
-    // reveal on scroll
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
