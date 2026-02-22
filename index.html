@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Suresh Krishna M — Portfolio</title>
-  <meta name="description" content="Digital Marketing Executive portfolio — Meta Ads, Canva Designs, Social Media Handling, Static Landing Pages." />
+  <meta name="description" content="Portfolio — Meta Ads, Canva Designs, Social Media Handling, Static Landing Pages." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
   <style>
     :root{
       --bg: #fbfbfd;
-      --card: rgba(255,255,255,.78);
+      --card: rgba(255,255,255,.82);
       --text: #101828;
       --muted: #667085;
       --line: rgba(16,24,40,.12);
@@ -21,6 +21,7 @@
       --shadow2: 0 10px 30px rgba(16,24,40,.08);
       --accent: #3b82f6;
       --accent2: #22c55e;
+      --radius: 18px;
       --radius2: 28px;
       --max: 1120px;
     }
@@ -37,54 +38,71 @@
         radial-gradient(900px 600px at 20% 100%, rgba(59,130,246,.10), transparent 60%),
         var(--bg);
     }
-
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
 
     .container{ width:min(var(--max), calc(100% - 40px)); margin-inline:auto; }
     .section{ padding: 74px 0; }
 
-    .section__head{ display:flex; flex-direction:column; gap:10px; margin-bottom:26px; }
+    .section__head{ display:flex; flex-direction:column; gap:10px; margin-bottom: 26px; }
     .section__title{
       font-family:"Playfair Display", serif;
       letter-spacing:-.02em;
       font-size: clamp(26px, 3.5vw, 38px);
       margin:0;
     }
-    .section__desc{ margin:0; color:var(--muted); max-width: 72ch; line-height:1.7; }
+    .section__desc{
+      margin:0;
+      color: var(--muted);
+      max-width: 72ch;
+      line-height: 1.7;
+    }
 
+    /* Scroll bar */
     .scroll-progress{
-      position: fixed; top:0; left:0;
-      height: 3px; width: 0%;
+      position: fixed;
+      top:0; left:0;
+      height: 3px;
+      width: 0%;
       z-index: 100;
       background: linear-gradient(90deg, rgba(59,130,246,1), rgba(34,197,94,1));
     }
 
+    /* Header */
     .header{
-      position: sticky; top:0; z-index:50;
+      position: sticky;
+      top: 0;
+      z-index: 50;
       background: rgba(251,251,253,.70);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--line);
     }
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:16px; position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 14px 0;
+      gap: 16px;
+      position: relative;
     }
     .brand{ display:flex; align-items:center; gap:10px; font-weight:700; }
     .brand__mark{
-      width:34px; height:34px; display:grid; place-items:center;
-      border:1px solid var(--line);
-      border-radius:12px;
+      width: 34px; height: 34px;
+      display:grid; place-items:center;
+      border: 1px solid var(--line);
+      border-radius: 12px;
       background: rgba(255,255,255,.7);
       box-shadow: var(--shadow2);
     }
-    .brand__text{ font-size:15px; letter-spacing:-.01em; }
-    .brand__text span{ color: var(--accent); }
+    .brand__text{ font-size: 15px; letter-spacing:-.01em; }
+    .brand__text span{color: var(--accent)}
 
-    .nav__links{ display:flex; align-items:center; gap:18px; }
+    .nav__links{ display:flex; align-items:center; gap: 18px; }
     .nav__link{
-      font-size:13px; color:var(--muted);
-      padding:10px 10px; border-radius:12px;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 10px 10px;
+      border-radius: 12px;
       transition: all .2s ease;
     }
     .nav__link:hover{
@@ -98,171 +116,259 @@
       border: 1px solid rgba(59,130,246,.18);
     }
     .nav__link--cta{
-      color:#fff;
+      color: #fff;
       background: linear-gradient(135deg, rgba(59,130,246,.95), rgba(34,197,94,.85));
       box-shadow: var(--shadow2);
     }
+    .nav__link--cta:hover{ transform: translateY(-1px); }
+
     .nav__toggle{
-      display:none; width:44px; height:44px;
-      border-radius:14px;
-      border:1px solid var(--line);
+      display:none;
+      width:44px;height:44px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.75);
       box-shadow: var(--shadow2);
       cursor:pointer;
     }
     .nav__toggle span{
-      display:block; height:2px; width:18px;
+      display:block;
+      height:2px;
+      width:18px;
       background: var(--text);
-      margin:5px auto; border-radius:999px;
+      margin: 5px auto;
+      border-radius: 999px;
     }
 
+    /* Hero */
     .hero__grid{
       display:grid;
       grid-template-columns: 1.4fr .9fr;
-      gap:26px; align-items:start;
+      gap: 26px;
+      align-items:start;
     }
     .eyebrow{
-      margin:0 0 10px; color:var(--muted);
-      font-weight:500; font-size:13px;
-      letter-spacing:.08em; text-transform:uppercase;
+      margin:0 0 10px;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing:.08em;
+      text-transform: uppercase;
     }
     .hero__title{
       font-family:"Playfair Display", serif;
       margin:0;
       font-size: clamp(34px, 4.6vw, 54px);
-      line-height:1.05; letter-spacing:-.02em;
+      line-height:1.05;
+      letter-spacing:-.02em;
     }
     .accent{
       background: linear-gradient(135deg, rgba(59,130,246,1), rgba(34,197,94,1));
-      -webkit-background-clip:text;
-      background-clip:text;
+      -webkit-background-clip: text;
+      background-clip: text;
       color: transparent;
     }
     .hero__sub{
       color: var(--muted);
-      font-size:15px; line-height:1.7;
-      max-width:62ch;
-      margin:14px 0 0;
+      font-size: 15px;
+      line-height:1.7;
+      max-width: 62ch;
+      margin: 14px 0 0;
     }
     .hero__actions{
-      display:flex; flex-wrap:wrap; gap:12px;
-      margin-top:18px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      margin-top: 18px;
     }
     .hero__meta{
-      display:grid; grid-template-columns: repeat(3,1fr);
-      gap:12px; margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
     }
     .meta-card{
       background: rgba(255,255,255,.7);
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 12px;
       box-shadow: var(--shadow2);
     }
-    .meta-card__label{ color:var(--muted); font-size:12px; }
-    .meta-card__value{ margin-top:4px; font-weight:700; font-size:13px; }
+    .meta-card__label{ color: var(--muted); font-size: 12px; }
+    .meta-card__value{ margin-top: 4px; font-weight: 700; font-size: 13px; }
 
+    /* Cards */
     .card{
       background: var(--card);
-      border:1px solid var(--line);
+      border: 1px solid var(--line);
       border-radius: var(--radius2);
-      padding:18px;
+      padding: 18px;
       box-shadow: var(--shadow);
     }
     .card--soft{ background: rgba(255,255,255,.55); }
 
-    .profile{ display:grid; grid-template-columns: 90px 1fr; gap:16px; align-items:center; }
+    /* Profile */
+    .profile{
+      display:grid;
+      grid-template-columns: 90px 1fr;
+      gap: 16px;
+      align-items:center;
+    }
     .profile__img{
-      width:90px; height:90px; border-radius:26px; overflow:hidden;
-      border:1px solid var(--line);
+      width: 90px;
+      height: 90px;
+      border-radius: 26px;
+      overflow:hidden;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.8);
       box-shadow: var(--shadow2);
-      position:relative;
+      position: relative;
     }
-    .profile__img img{ width:100%; height:100%; object-fit:cover; }
+    .profile__img img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+    }
     .profile__fallback{
-      position:absolute; inset:0;
-      display:grid; place-items:center;
-      font-weight:800; font-size:22px;
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      font-size: 22px;
       color: rgba(16,24,40,.75);
       background: radial-gradient(circle at 30% 20%, rgba(59,130,246,.18), transparent 55%),
                   radial-gradient(circle at 80% 60%, rgba(34,197,94,.14), transparent 55%),
                   rgba(255,255,255,.85);
     }
-    .profile__info h2{ margin:0; font-size:18px; }
-    .profile__info p{ margin:4px 0 10px; color:var(--muted); font-size:13px; }
-
+    .profile__info h2{ margin: 0; font-size: 18px; }
+    .profile__info p{ margin: 4px 0 10px; color: var(--muted); font-size: 13px; }
+    .chips{ display:flex; flex-wrap:wrap; gap: 8px; }
     .chip{
-      font-size:12px; color:var(--muted);
-      padding:8px 10px; border-radius:999px;
-      border:1px solid var(--line);
+      font-size: 12px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.65);
     }
 
+    /* Buttons */
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:8px;
-      padding:11px 14px;
-      border-radius:14px;
-      border:1px solid transparent;
-      font-weight:600; font-size:13px;
-      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
       transition: transform .15s ease, box-shadow .2s ease, background .2s ease, border .2s ease;
+      user-select:none;
     }
     .btn--primary{
       color:#fff;
       background: linear-gradient(135deg, rgba(59,130,246,1), rgba(34,197,94,1));
       box-shadow: var(--shadow2);
     }
-    .btn--primary:hover{ transform: translateY(-1px); }
+    .btn--primary:hover{transform: translateY(-1px)}
     .btn--ghost{
       background: rgba(255,255,255,.6);
-      border:1px solid var(--line);
+      border: 1px solid var(--line);
       color: var(--text);
     }
     .btn--ghost:hover{ box-shadow: var(--shadow2); transform: translateY(-1px); }
     .btn--soft{
       background: rgba(59,130,246,.10);
-      border:1px solid rgba(59,130,246,.18);
+      border: 1px solid rgba(59,130,246,.18);
       color: var(--text);
     }
-    .btn--soft:hover{ transform: translateY(-1px); }
-    .btn--full{ width:100%; }
+    .btn--soft:hover{transform: translateY(-1px)}
+    .btn--full{width:100%}
 
-    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-    .row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    /* Layout helpers */
+    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .row{ display:flex; align-items:center; gap: 10px; flex-wrap:wrap; }
     .row--between{ justify-content:space-between; }
     .muted{ color: var(--muted); }
-    .small{ font-size:13px; }
+    .small{ font-size: 13px; }
 
-    .list{ margin:12px 0 0; padding-left:18px; color:var(--muted); line-height:1.7; }
-    .list li{ margin:6px 0; }
+    /* Lists */
+    .list{
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .list li{margin: 6px 0}
 
-    .resume-grid{ display:grid; grid-template-columns: 1fr 1.2fr; gap:16px; }
+    /* ✅ FIX EXPERIENCE WRAPPING ISSUE */
+    .row--between{
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .row--between strong{ min-width: 0; }
+    .row--between .muted{ white-space: nowrap; }
 
-    .timeline{ list-style:none; padding:0; margin:10px 0 0; display:flex; flex-direction:column; gap:14px; }
-    .timeline li{ display:grid; grid-template-columns: 14px 1fr; gap:12px; align-items:flex-start; }
+    .timeline{
+      list-style:none;
+      padding:0;
+      margin: 10px 0 0;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+    }
+    .timeline li{
+      display:grid;
+      grid-template-columns: 14px 1fr;
+      gap: 12px;
+      align-items:flex-start;
+    }
+    .timeline li > div{ min-width:0; }
+    .timeline .list{ width:100%; }
+
     .dot{
-      width:10px; height:10px; border-radius:999px; margin-top:6px;
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      margin-top: 6px;
       background: linear-gradient(135deg, rgba(59,130,246,1), rgba(34,197,94,1));
     }
 
-    .skills-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; }
-    .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    /* ✅ Unified Skills (Not separated) */
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
     .badge{
-      font-size:12px; padding:8px 10px; border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.6);
+      font-size: 12px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.65);
       color: var(--muted);
     }
 
-    .filters{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+    /* Work */
+    .filters{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-bottom: 14px;
+    }
     .filter{
-      padding:10px 12px; border-radius:999px;
-      border:1px solid var(--line);
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.6);
       cursor:pointer;
       color: var(--muted);
-      font-weight:600; font-size:12px;
+      font-weight: 600;
+      font-size: 12px;
       transition: all .2s ease;
     }
     .filter.active{
@@ -270,19 +376,28 @@
       border-color: rgba(59,130,246,.18);
       color: var(--text);
     }
-
-    .work-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; }
+    .work-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
     .work-card{
       overflow:hidden;
       border-radius: var(--radius2);
-      border:1px solid var(--line);
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.65);
       box-shadow: var(--shadow2);
       transition: transform .15s ease, box-shadow .2s ease;
     }
-    .work-card:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
+    .work-card:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
     .work-thumb{
-      height:130px; display:flex; align-items:flex-end; padding:14px;
+      height: 130px;
+      display:flex;
+      align-items:flex-end;
+      padding: 14px;
       background:
         radial-gradient(400px 160px at 20% 20%, rgba(59,130,246,.18), transparent 60%),
         radial-gradient(400px 160px at 80% 70%, rgba(34,197,94,.14), transparent 60%),
@@ -290,65 +405,102 @@
       border-bottom: 1px solid var(--line);
     }
     .work-thumb span{
-      font-size:12px; padding:8px 10px; border-radius:999px;
-      border:1px solid var(--line);
+      font-size: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.7);
       color: var(--muted);
     }
-    .work-body{ padding:14px; }
-    .link{ color: var(--accent); font-weight:600; font-size:13px; }
+    .work-body{padding: 14px}
+    .link{
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 13px;
+    }
     .pill{
-      font-size:12px; padding:6px 10px; border-radius:999px;
-      border:1px solid var(--line);
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.55);
       color: var(--muted);
     }
 
-    .services-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; }
+    /* Services */
+    .services-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
     .service-card{
       background: rgba(255,255,255,.65);
-      border:1px solid var(--line);
+      border: 1px solid var(--line);
       border-radius: var(--radius2);
-      padding:18px;
+      padding: 18px;
       box-shadow: var(--shadow2);
       transition: transform .15s ease, box-shadow .2s ease;
     }
-    .service-card:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
-
+    .service-card:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
     .cta-banner{
-      margin-top:16px;
-      padding:18px;
+      margin-top: 16px;
+      padding: 18px;
       border-radius: var(--radius2);
-      border:1px solid rgba(59,130,246,.18);
+      border: 1px solid rgba(59,130,246,.18);
       background: linear-gradient(135deg, rgba(59,130,246,.10), rgba(34,197,94,.08));
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; flex-wrap:wrap;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
     }
 
-    .contact-grid{ display:grid; grid-template-columns: 1fr 1.2fr; gap:16px; }
-    .contact-links{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 16px;
+    }
+    .contact-links{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      margin-top: 10px;
+    }
     .contact-link{
-      display:flex; gap:10px; align-items:center;
-      padding:12px;
-      border-radius:18px;
-      border:1px solid var(--line);
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      padding: 12px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.6);
     }
     .contact-link:hover{ box-shadow: var(--shadow2); }
     .icon{
-      width:36px; height:36px;
+      width: 36px; height: 36px;
       display:grid; place-items:center;
-      border-radius:14px;
-      border:1px solid var(--line);
+      border-radius: 14px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.8);
     }
-
-    label{ display:flex; flex-direction:column; gap:6px; margin-bottom:12px; color:var(--muted); font-size:13px; }
+    label{
+      display:flex;
+      flex-direction:column;
+      gap: 6px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
     input, textarea{
-      font-family: inherit; font-size:14px;
-      padding:12px;
-      border-radius:14px;
-      border:1px solid var(--line);
+      font-family: inherit;
+      font-size: 14px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.75);
       outline:none;
     }
@@ -356,56 +508,77 @@
       border-color: rgba(59,130,246,.45);
       box-shadow: 0 0 0 4px rgba(59,130,246,.10);
     }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 16px 0;
+    }
 
-    .divider{ height:1px; background: var(--line); margin:16px 0; }
-
+    /* Footer */
     .footer{
       padding: 22px 0 40px;
       border-top: 1px solid var(--line);
       background: rgba(251,251,253,.65);
       backdrop-filter: blur(8px);
     }
-    .footer__inner{ display:flex; align-items:center; justify-content:space-between; }
+    .footer__inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
     .backtop{
-      width:40px; height:40px; display:grid; place-items:center;
-      border-radius:14px;
-      border:1px solid var(--line);
+      width: 40px; height: 40px;
+      display:grid; place-items:center;
+      border-radius: 14px;
+      border: 1px solid var(--line);
       background: rgba(255,255,255,.7);
       box-shadow: var(--shadow2);
     }
 
-    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible{ opacity:1; transform: translateY(0); }
+    /* Reveal on scroll */
+    .reveal{
+      opacity:0;
+      transform: translateY(14px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform: translateY(0);
+    }
 
+    /* Responsive */
     @media (max-width: 980px){
-      .hero__grid{ grid-template-columns: 1fr; }
-      .hero__meta{ grid-template-columns: repeat(3, 1fr); }
-      .skills-grid{ grid-template-columns: repeat(2, 1fr); }
-      .work-grid{ grid-template-columns: repeat(2, 1fr); }
-      .services-grid{ grid-template-columns: repeat(2, 1fr); }
-      .grid-2{ grid-template-columns: 1fr; }
-      .resume-grid{ grid-template-columns: 1fr; }
-      .contact-grid{ grid-template-columns: 1fr; }
+      .hero__grid{grid-template-columns: 1fr}
+      .hero__meta{grid-template-columns: repeat(3, 1fr)}
+      .work-grid{grid-template-columns: repeat(2, 1fr)}
+      .services-grid{grid-template-columns: repeat(2, 1fr)}
+      .grid-2{grid-template-columns: 1fr}
+      .contact-grid{grid-template-columns: 1fr}
     }
     @media (max-width: 720px){
-      .nav__toggle{ display:block; }
+      .nav__toggle{display:block}
       .nav__links{
-        position:absolute;
-        top:64px;
-        left:0; right:0;
-        padding:12px;
-        border-radius:18px;
-        border:1px solid var(--line);
+        position: absolute;
+        top: 64px;
+        right: 0;
+        left: 0;
+        padding: 12px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
         background: rgba(255,255,255,.90);
         box-shadow: var(--shadow);
         display:none;
         flex-direction:column;
         align-items:stretch;
-        gap:8px;
+        gap: 8px;
       }
-      .nav__links.open{ display:flex; }
-      .nav__link{ padding:12px; }
-      .hero__meta{ grid-template-columns: 1fr; }
+      .nav__links.open{display:flex}
+      .nav__link{padding: 12px}
+      .hero__meta{grid-template-columns: 1fr}
+      .work-grid{grid-template-columns: 1fr}
+      .services-grid{grid-template-columns: 1fr}
+      .row--between{ flex-wrap: wrap; } /* allow wrap on very small screens */
+      .row--between .muted{ white-space: normal; }
     }
   </style>
 </head>
@@ -441,7 +614,7 @@
     <section class="hero container section">
       <div class="hero__grid">
         <div class="hero__content reveal">
-          <p class="eyebrow">B2B Digital Marketing • Performance • Lead Generation</p>
+          <p class="eyebrow">Digital Marketing • Performance • Lead Generation</p>
 
           <h1 class="hero__title">
             Hi, I’m <span class="accent">Suresh Krishna M</span><br/>
@@ -449,16 +622,17 @@
           </h1>
 
           <p class="hero__sub">
-            I specialize in B2B digital growth using <strong>Meta Ads</strong>, <strong>Google Ads</strong>, <strong>SEO</strong>,
-            <strong>WordPress</strong>, and <strong>Email Marketing</strong>—focused on qualified leads and measurable results.
+            I help brands grow with <strong>Meta Ads</strong>, <strong>Canva Creatives</strong>, <strong>Social Media Handling</strong>,
+            and <strong>conversion-focused static landing pages</strong>.
           </p>
 
           <div class="hero__actions">
             <a class="btn btn--primary" href="#work">View Work</a>
             <a class="btn btn--ghost" href="#contact">Hire Me</a>
 
-            <!-- ✅ FIXED PATH AS PER YOUR SCREENSHOT -->
-            <a class="btn btn--soft" href="assets/assets/resume.pdf" download>Download Resume</a>
+            <!-- ✅ Resume path (as per your repo screenshot: assets/assets/resume.pdf) -->
+            <a class="btn btn--soft" href="/assets/assets/resume.pdf" download>Download Resume</a>
+            <a class="btn btn--ghost" href="/assets/assets/resume.pdf" target="_blank" rel="noopener">Open Resume</a>
           </div>
 
           <div class="hero__meta">
@@ -467,25 +641,21 @@
               <div class="meta-card__value">Madurai, India</div>
             </div>
             <div class="meta-card">
-              <div class="meta-card__label">Key Focus</div>
-              <div class="meta-card__value">B2B Lead Gen</div>
+              <div class="meta-card__label">Primary</div>
+              <div class="meta-card__value">Meta Ads</div>
             </div>
             <div class="meta-card">
-              <div class="meta-card__label">Services</div>
-              <div class="meta-card__value">Ads + Landing</div>
+              <div class="meta-card__label">Secondary</div>
+              <div class="meta-card__value">Landing Pages</div>
             </div>
           </div>
         </div>
 
-        <aside class="hero__card reveal">
+        <aside class="reveal">
           <div class="card">
             <div class="profile">
               <div class="profile__img">
-                <!-- Optional photo:
-                   If you add profile image later, put it in root folder like assets/profile.jpg and set:
-                   src="assets/profile.jpg"
-                -->
-                <img src="assets/profile.jpg" alt="Suresh Krishna profile photo"
+                <img src="/assets/profile.jpg" alt="Profile photo"
                      onerror="this.style.display='none';" />
                 <div class="profile__fallback">SK</div>
               </div>
@@ -494,11 +664,11 @@
                 <h2>Suresh Krishna M</h2>
                 <p>Digital Marketing Executive</p>
 
-                <div class="row">
+                <div class="chips">
                   <a class="chip" href="mailto:msureshkrishna2001@gmail.com">✉️ msureshkrishna2001@gmail.com</a>
                   <a class="chip" href="tel:+917305811343">📞 7305811343</a>
-                  <a class="chip" href="https://wa.me/917305811343?text=Hi%20Suresh,%20I%20saw%20your%20portfolio.%20I%20want%20to%20discuss%20a%20project."
-                     target="_blank" rel="noopener">💬 WhatsApp</a>
+                  <a class="chip" target="_blank" rel="noopener"
+                     href="https://wa.me/917305811343?text=Hi%20Suresh,%20I%20saw%20your%20portfolio.%20I%20want%20to%20discuss%20a%20project.">💬 WhatsApp</a>
                 </div>
 
                 <div style="margin-top:12px;">
@@ -509,10 +679,8 @@
 
             <div class="divider"></div>
 
-            <!-- ✅ FIXED PATH AS PER YOUR SCREENSHOT -->
-            <a class="btn btn--soft btn--full" href="assets/assets/resume.pdf" download>
-              Download Resume (PDF)
-            </a>
+            <!-- ✅ Resume path -->
+            <a class="btn btn--soft btn--full" href="/assets/assets/resume.pdf" download>Download Resume (PDF)</a>
           </div>
         </aside>
       </div>
@@ -523,34 +691,30 @@
       <div class="section__head reveal">
         <h2 class="section__title">About</h2>
         <p class="section__desc">
-          I’m a digital marketing professional focused on lead generation, social media growth, and conversion-focused landing pages.
-          I run Meta Ads and create strong creatives using Canva, and I build static landing pages that convert visitors into leads.
+          I’m a digital marketing professional focused on lead generation, creative design, and conversion optimization.
+          I run campaigns, design creatives, handle social pages, and build landing pages that convert.
         </p>
       </div>
 
       <div class="grid-2 reveal">
         <div class="card">
-          <h3>What I do</h3>
+          <h3 style="margin-top:0;">What I do</h3>
           <ul class="list">
-            <li><strong>Meta Ads:</strong> Lead/WhatsApp campaigns + optimization</li>
-            <li><strong>Canva Designs:</strong> Ads + social creatives + banners</li>
-            <li><strong>Social Media Handling:</strong> Calendar + posting + engagement</li>
-            <li><strong>Landing Pages:</strong> Fast static landing pages with CTA</li>
+            <li><strong>Meta Ads:</strong> Lead / WhatsApp campaigns with optimization.</li>
+            <li><strong>Canva Designs:</strong> Ads creatives, banners, social posts.</li>
+            <li><strong>Social Media Handling:</strong> Content planning, posting, engagement.</li>
+            <li><strong>Static Landing Pages:</strong> Fast, responsive pages focused on conversions.</li>
           </ul>
         </div>
 
         <div class="card card--soft">
-          <h3>Highlights</h3>
-          <div class="row">
-            <span class="badge">Meta Ads</span>
-            <span class="badge">Google Ads</span>
-            <span class="badge">WordPress</span>
-            <span class="badge">SEO</span>
-            <span class="badge">Canva</span>
-          </div>
-          <p class="muted small" style="margin-top:12px;">
-            Add your real achievements here (leads, CTR, conversions, traffic growth).
-          </p>
+          <h3 style="margin-top:0;">What you get</h3>
+          <ul class="list">
+            <li>Professional communication + clear timelines.</li>
+            <li>Creative + performance focused approach.</li>
+            <li>Clean reports and continuous improvements.</li>
+            <li>Quality work with long-term mindset.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -559,102 +723,87 @@
     <section id="resume" class="container section">
       <div class="section__head reveal">
         <h2 class="section__title">Resume</h2>
-        <p class="section__desc">
-          Click below to download or open my resume.
-        </p>
+        <p class="section__desc">Download or open my resume using the buttons below.</p>
       </div>
 
-      <div class="resume-grid reveal">
+      <div class="grid-2 reveal">
         <div class="card">
-          <h3>Download</h3>
+          <h3 style="margin-top:0;">Download</h3>
           <p class="muted">PDF format</p>
           <div class="row">
-            <!-- ✅ FIXED PATH AS PER YOUR SCREENSHOT -->
-            <a href="/assets/assets/resume.pdf" download>Download Resume</a>
-<a href="/assets/assets/resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+            <a class="btn btn--primary" href="/assets/assets/resume.pdf" download>Download Resume</a>
+            <a class="btn btn--ghost" href="/assets/assets/resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
           </div>
+          <div class="divider"></div>
+          <p class="muted small" style="margin:0;">
+            If your resume is moved later, update the path in links.
+          </p>
         </div>
 
         <div class="card card--soft">
-          <h3>Quick Overview</h3>
+          <h3 style="margin-top:0;">Quick Summary</h3>
           <ul class="timeline">
             <li>
               <span class="dot"></span>
               <div>
-                <strong>Digital Marketing Executive</strong>
-                <div class="muted">Madurai • B2B Marketing</div>
-                <p class="small muted">Meta Ads, SEO, WordPress, landing pages, social, creatives, and reporting.</p>
+                <div class="row row--between">
+                  <strong>Digital Marketing Executive</strong>
+                  <span class="muted">Present</span>
+                </div>
+                <p class="muted small" style="margin:8px 0 0;">
+                  Meta Ads • Canva Creatives • Social Handling • Landing Pages
+                </p>
               </div>
             </li>
             <li>
               <span class="dot"></span>
               <div>
-                <strong>Freelancing</strong>
-                <div class="muted">Meta Ads • Canva • Social • Landing Pages</div>
+                <strong>Freelancing Services</strong>
+                <p class="muted small" style="margin:6px 0 0;">Campaigns, creatives, and conversion-focused websites.</p>
               </div>
             </li>
           </ul>
 
-          <!-- ✅ FIXED PATH AS PER YOUR SCREENSHOT -->
           <div style="margin-top:14px;">
-            <a class="btn btn--soft btn--full" href="assets/assets/resume.pdf" download>Download Resume</a>
+            <a class="btn btn--soft btn--full" href="/assets/assets/resume.pdf" download>Download Resume</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- SKILLS (Unified - Not separated) -->
     <section id="skills" class="container section">
       <div class="section__head reveal">
         <h2 class="section__title">Skills</h2>
-        <p class="section__desc">Tools and skills I use to create results.</p>
+        <p class="section__desc">All skills together (not separated).</p>
       </div>
 
-      <div class="skills-grid reveal">
-        <div class="card">
-          <h3>Marketing</h3>
-          <div class="badges">
-            <span class="badge">Meta Ads</span>
-            <span class="badge">Lead Generation</span>
-            <span class="badge">Campaign Optimization</span>
-            <span class="badge">Copywriting</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Creative</h3>
-          <div class="badges">
-            <span class="badge">Canva</span>
-            <span class="badge">Ad Creatives</span>
-            <span class="badge">Social Posts</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Web</h3>
-          <div class="badges">
-            <span class="badge">WordPress</span>
-            <span class="badge">Static Landing Pages</span>
-            <span class="badge">Basic SEO</span>
-          </div>
-        </div>
-
-        <div class="card card--soft">
-          <h3>Analytics</h3>
-          <div class="badges">
-            <span class="badge">GA4</span>
-            <span class="badge">Facebook Pixel</span>
-            <span class="badge">Reporting</span>
-          </div>
+      <div class="card reveal">
+        <div class="badges">
+          <span class="badge">Meta Ads (Facebook/Instagram)</span>
+          <span class="badge">WhatsApp Campaigns</span>
+          <span class="badge">Lead Generation</span>
+          <span class="badge">Campaign Optimization</span>
+          <span class="badge">Creative Testing</span>
+          <span class="badge">Canva Designs</span>
+          <span class="badge">Ad Creatives</span>
+          <span class="badge">Social Media Handling</span>
+          <span class="badge">Content Planning</span>
+          <span class="badge">Static Landing Pages (HTML/CSS)</span>
+          <span class="badge">Basic SEO</span>
+          <span class="badge">Keyword Research</span>
+          <span class="badge">Facebook Pixel</span>
+          <span class="badge">GA4 Basics</span>
+          <span class="badge">Reporting</span>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- EXPERIENCE (Fixed Layout) -->
     <section id="experience" class="container section">
       <div class="section__head reveal">
         <h2 class="section__title">Experience</h2>
-        <p class="section__desc">What I do in my current and previous roles.</p>
+        <p class="section__desc">What I do in my current role.</p>
       </div>
 
       <div class="card reveal">
@@ -666,11 +815,13 @@
                 <strong>Digital Marketing Executive</strong>
                 <span class="muted">Present</span>
               </div>
+
               <ul class="list small">
-                <li>Run Meta Ads for leads and WhatsApp conversations.</li>
-                <li>Create Canva creatives for ads and social content.</li>
-                <li>Build static landing pages and optimize for conversions.</li>
-                <li>Manage social pages and content posting schedule.</li>
+                <li>Run Meta Ads for lead generation and WhatsApp conversations.</li>
+                <li>Create Canva creatives for ads and social media content.</li>
+                <li>Build static landing pages focused on conversions.</li>
+                <li>Handle social media pages with content planning and posting.</li>
+                <li>Track performance and improve campaigns using analytics and reporting.</li>
               </ul>
             </div>
           </li>
@@ -678,11 +829,13 @@
       </div>
     </section>
 
-    <!-- WORK -->
+    <!-- WORK SAMPLES -->
     <section id="work" class="container section">
       <div class="section__head reveal">
         <h2 class="section__title">Work Samples</h2>
-        <p class="section__desc">Replace these placeholders with your real work links/screenshots.</p>
+        <p class="section__desc">
+          Replace the placeholders with your real links (Drive/Instagram/landing pages).
+        </p>
       </div>
 
       <div class="filters reveal">
@@ -697,8 +850,8 @@
         <article class="work-card" data-cat="meta">
           <div class="work-thumb"><span>Meta Ads</span></div>
           <div class="work-body">
-            <h3 style="margin:0 0 6px;">Lead Gen Campaign</h3>
-            <p class="muted small" style="margin:0 0 12px;">Audience, creatives and optimization approach.</p>
+            <h3 style="margin:0 0 6px;">Lead Generation Campaign</h3>
+            <p class="muted small" style="margin:0 0 12px;">Campaign setup + targeting + results.</p>
             <div class="row row--between">
               <a class="link" href="#" target="_blank" rel="noopener">View</a>
               <span class="pill">Meta</span>
@@ -710,10 +863,22 @@
           <div class="work-thumb"><span>Canva</span></div>
           <div class="work-body">
             <h3 style="margin:0 0 6px;">Creative Set</h3>
-            <p class="muted small" style="margin:0 0 12px;">Ad design variations for testing.</p>
+            <p class="muted small" style="margin:0 0 12px;">Ads + social posts + banners.</p>
             <div class="row row--between">
               <a class="link" href="#" target="_blank" rel="noopener">View</a>
               <span class="pill">Design</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card" data-cat="social">
+          <div class="work-thumb"><span>Social</span></div>
+          <div class="work-body">
+            <h3 style="margin:0 0 6px;">Social Page Handling</h3>
+            <p class="muted small" style="margin:0 0 12px;">Content plan + posting + engagement.</p>
+            <div class="row row--between">
+              <a class="link" href="#" target="_blank" rel="noopener">View</a>
+              <span class="pill">Social</span>
             </div>
           </div>
         </article>
@@ -722,22 +887,10 @@
           <div class="work-thumb"><span>Landing</span></div>
           <div class="work-body">
             <h3 style="margin:0 0 6px;">Static Landing Page</h3>
-            <p class="muted small" style="margin:0 0 12px;">Responsive conversion-focused page.</p>
+            <p class="muted small" style="margin:0 0 12px;">Responsive page with CTA focus.</p>
             <div class="row row--between">
               <a class="link" href="#" target="_blank" rel="noopener">View</a>
               <span class="pill">Landing</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="work-card" data-cat="social">
-          <div class="work-thumb"><span>Social</span></div>
-          <div class="work-body">
-            <h3 style="margin:0 0 6px;">Social Media Handling</h3>
-            <p class="muted small" style="margin:0 0 12px;">Calendar + posting + engagement.</p>
-            <div class="row row--between">
-              <a class="link" href="#" target="_blank" rel="noopener">View</a>
-              <span class="pill">Social</span>
             </div>
           </div>
         </article>
@@ -748,7 +901,7 @@
     <section id="services" class="container section">
       <div class="section__head reveal">
         <h2 class="section__title">Free lancing services</h2>
-        <p class="section__desc">What I can do for your brand.</p>
+        <p class="section__desc">Choose a service and contact me for a quick quote.</p>
       </div>
 
       <div class="services-grid reveal">
@@ -756,27 +909,27 @@
           <h3 style="margin:0 0 8px;">Meta Ads</h3>
           <p class="muted" style="margin:0 0 12px;">Setup + targeting + optimization + reporting.</p>
           <ul class="list small">
-            <li>WhatsApp / Lead campaigns</li>
+            <li>Lead / WhatsApp campaigns</li>
             <li>Creative testing plan</li>
-            <li>Weekly performance report</li>
+            <li>Weekly performance updates</li>
           </ul>
         </div>
 
         <div class="service-card">
           <h3 style="margin:0 0 8px;">Canva Designs</h3>
-          <p class="muted" style="margin:0 0 12px;">Ads + posts + banners + thumbnails.</p>
+          <p class="muted" style="margin:0 0 12px;">Ads creatives, banners, posts, thumbnails.</p>
           <ul class="list small">
-            <li>Brand templates</li>
             <li>Multiple variants</li>
+            <li>Brand templates</li>
             <li>Export-ready files</li>
           </ul>
         </div>
 
         <div class="service-card">
           <h3 style="margin:0 0 8px;">Social Media Pages Handling</h3>
-          <p class="muted" style="margin:0 0 12px;">Monthly plan + posting + engagement.</p>
+          <p class="muted" style="margin:0 0 12px;">Content plan, posting, engagement.</p>
           <ul class="list small">
-            <li>Content calendar</li>
+            <li>Monthly calendar</li>
             <li>Captions + hashtags</li>
             <li>Insights summary</li>
           </ul>
@@ -784,10 +937,10 @@
 
         <div class="service-card">
           <h3 style="margin:0 0 8px;">Static Landing Pages</h3>
-          <p class="muted" style="margin:0 0 12px;">Fast landing pages to generate leads.</p>
+          <p class="muted" style="margin:0 0 12px;">Fast pages designed to convert.</p>
           <ul class="list small">
-            <li>Responsive UI</li>
-            <li>CTA-focused layout</li>
+            <li>Responsive layout</li>
+            <li>CTA-focused sections</li>
             <li>Basic SEO structure</li>
           </ul>
         </div>
@@ -795,8 +948,8 @@
 
       <div class="cta-banner reveal">
         <div>
-          <h3 style="margin:0 0 6px;">Want to start a project?</h3>
-          <p class="muted" style="margin:0;">Message me on WhatsApp or email.</p>
+          <h3 style="margin:0 0 6px;">Ready to start?</h3>
+          <p class="muted" style="margin:0;">Message me on WhatsApp or email — I reply quickly.</p>
         </div>
         <div class="row">
           <a class="btn btn--primary" href="#contact">Contact</a>
@@ -810,7 +963,7 @@
     <section id="contact" class="container section">
       <div class="section__head reveal">
         <h2 class="section__title">Contact Me</h2>
-        <p class="section__desc">Click email to open Gmail app, click number to call, WhatsApp for chat.</p>
+        <p class="section__desc">Click email to open mail app, click number to call, WhatsApp for chat.</p>
       </div>
 
       <div class="contact-grid reveal">
@@ -819,19 +972,27 @@
           <div class="contact-links">
             <a class="contact-link" href="mailto:msureshkrishna2001@gmail.com">
               <span class="icon">✉️</span>
-              <span><strong>Email</strong><br/><span class="muted">msureshkrishna2001@gmail.com</span></span>
+              <span>
+                <strong>Email</strong><br/>
+                <span class="muted">msureshkrishna2001@gmail.com</span>
+              </span>
             </a>
 
             <a class="contact-link" href="tel:+917305811343">
               <span class="icon">📞</span>
-              <span><strong>Call</strong><br/><span class="muted">7305811343</span></span>
+              <span>
+                <strong>Call</strong><br/>
+                <span class="muted">7305811343</span>
+              </span>
             </a>
 
-            <a class="contact-link"
-               href="https://wa.me/917305811343?text=Hi%20Suresh,%20I%20saw%20your%20portfolio.%20Can%20we%20talk%20about%20a%20project%3F"
+            <a class="contact-link" href="https://wa.me/917305811343?text=Hi%20Suresh,%20I%20saw%20your%20portfolio.%20Can%20we%20talk%20about%20a%20project%3F"
                target="_blank" rel="noopener">
               <span class="icon">💬</span>
-              <span><strong>WhatsApp</strong><br/><span class="muted">Chat instantly</span></span>
+              <span>
+                <strong>WhatsApp</strong><br/>
+                <span class="muted">Chat instantly</span>
+              </span>
             </a>
           </div>
 
@@ -839,14 +1000,13 @@
 
           <h3 style="margin:0 0 8px;">Resume</h3>
           <p class="muted small" style="margin:0 0 10px;">One click download:</p>
-
-          <!-- ✅ FIXED PATH AS PER YOUR SCREENSHOT -->
-          <a class="btn btn--soft btn--full" href="assets/assets/resume.pdf" download>Download Resume</a>
+          <a class="btn btn--soft btn--full" href="/assets/assets/resume.pdf" download>Download Resume</a>
         </div>
 
         <div class="card card--soft">
           <h3 style="margin:0 0 10px;">Send a message</h3>
 
+          <!-- GitHub Pages is static: this opens user's email app with prefilled message -->
           <form id="contactForm">
             <label>
               Name
@@ -892,10 +1052,12 @@
       const isOpen = navLinks.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
-    $$(".nav__link").forEach(link => link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }));
+    $$(".nav__link").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
 
     // Active nav
     const sections = ["about","resume","skills","experience","work","services","contact"]
@@ -918,10 +1080,12 @@
       if (active) active.classList.add("active");
     };
 
-    // Reveal
+    // Reveal on scroll
     const revealEls = $$(".reveal");
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      });
     }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
 
