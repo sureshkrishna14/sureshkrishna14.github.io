@@ -1,104 +1,1004 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site not available</title>
-    <style>
-      :root {
-        --colorRgbFacetsTeal600: 2 128 125;
-        --colorTealAction: var(--colorRgbFacetsTeal600);
-        --colorRgbFacetsNeutralLight200: 233 235 237;
-        --colorHr: var(--colorRgbFacetsNeutralLight200);
-        --colorRgbFacetsNeutralLight700: 53 58 62;
-        --colorGrayDarkest: var(--colorRgbFacetsNeutralLight700);
-        --colorGrayLighter: var(--colorRgbFacetsNeutralLight200);
-        --colorText: var(--colorGrayDarkest);
-        --effectShadowLightShallow: 0 1px 10px 0 rgb(53 58 62 / 6%),
-          0 2px 4px 0 rgb(53 58 62 / 8%);
-        --colorRgbFacetsNeutralDark900: 6 11 16;
-      }
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol";
-        background: white;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
-        color: rgb(var(--colorText));
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suresh Krishna M | Digital Marketing Executive</title>
+  <meta name="description" content="Portfolio website of Suresh Krishna M, Digital Marketing Executive specializing in B2B promotions, Meta Ads, Google Ads, SEO, WordPress, email marketing, Canva designs, and landing pages." />
+  <meta name="keywords" content="Suresh Krishna, Digital Marketing Executive, B2B Promotions, Meta Ads, Google Ads, SEO, WordPress, Email Marketing, Canva, Landing Page" />
+  <meta property="og:title" content="Suresh Krishna M | Digital Marketing Executive" />
+  <meta property="og:description" content="Supporting B2B growth through paid ads, SEO, WordPress, and digital promotions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/profile-placeholder.jpg" />
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-soft: #111827;
+      --surface: #ffffff;
+      --surface-soft: #f8fafc;
+      --text: #0f172a;
+      --text-light: #475569;
+      --text-on-dark: #e2e8f0;
+      --border: #e2e8f0;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --accent: #38bdf8;
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --radius: 22px;
+      --max-width: 1180px;
+      --transition: 0.28s ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 84px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 2vw, 2.5rem);
+      line-height: 1.15;
+      margin: 0 0 12px;
+      color: var(--text);
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      margin: 0 0 32px;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--primary);
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-dark {
+      background: #0f172a;
+      color: #fff;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.82);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .nav-wrap {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
+
+    .brand span { color: var(--primary); }
+
+    .nav-toggle {
+      display: none;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      font-weight: 600;
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34%),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.16), transparent 32%),
+        linear-gradient(135deg, #071224 0%, #0b1120 45%, #111827 100%);
+      color: var(--text-on-dark);
+      padding: 92px 0 72px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 4vw, 4.8rem);
+      line-height: 1.04;
+      margin: 18px 0 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-role {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #cbd5e1;
+      max-width: 640px;
+      margin: 0 0 28px;
+      font-size: 1.05rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .stat-box {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .stat-box span {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3,
+    .card h4 {
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .card p,
+    .card li,
+    .timeline-text,
+    .muted {
+      color: var(--text-light);
+    }
+
+    .about-list,
+    .experience-list,
+    .highlights-list,
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .about-list li,
+    .experience-list li,
+    .highlights-list li,
+    .contact-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .about-list li::before,
+    .experience-list li::before,
+    .highlights-list li::before,
+    .contact-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+
+    .skills-grid .card {
+      padding: 20px;
+      text-align: center;
+      font-weight: 700;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .skills-grid .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(37, 99, 235, 0.24);
+    }
+
+    .tool-group-title {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tag {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.94rem;
+    }
+
+    .timeline-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-meta {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-weight: 700;
+      background: rgba(37, 99, 235, 0.08);
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .sample-card {
+      overflow: hidden;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sample-thumb {
+      aspect-ratio: 16 / 10;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 45%, #f8fafc 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .sample-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .sample-actions { margin-top: auto; }
+
+    .contact-card {
+      background: linear-gradient(135deg, #0f172a 0%, #172554 100%);
+      color: #fff;
+      border: none;
+    }
+
+    .contact-card .section-title,
+    .contact-card h3,
+    .contact-card p,
+    .contact-card li,
+    .contact-card a,
+    .contact-card .section-subtitle {
+      color: #e2e8f0;
+    }
+
+    .contact-card .contact-list li::before {
+      background: #38bdf8;
+    }
+
+    .site-footer {
+      padding: 28px 0 42px;
+      border-top: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .footer-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.76);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 120;
+    }
+
+    .modal.open { display: flex; }
+
+    .modal-dialog {
+      width: min(760px, 100%);
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(2, 6, 23, 0.28);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 42px;
+      height: 42px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.92);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .modal-preview {
+      min-height: 280px;
+      background: linear-gradient(135deg, #dbeafe 0%, #f8fafc 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr 1fr;
       }
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: rgb(var(--colorRgbFacetsNeutralDark900));
-        }
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+    }
 
-      h1 {
-        margin: 0;
-        font-size: 1.375rem;
-        line-height: 1;
-      }
+    @media (max-width: 760px) {
+      .nav-toggle { display: inline-flex; }
 
-      h1 + p {
-        margin-top: 8px;
-      }
-
-      .main {
-        position: relative;
-        display: flex;
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        top: calc(100% + 10px);
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 16px;
+        box-shadow: var(--shadow);
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100vw;
+        align-items: flex-start;
       }
 
-      .card {
-        position: relative;
-        width: 75%;
-        max-width: 364px;
-        padding: 24px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: var(--effectShadowLightShallow);
-        border: 1px solid rgb(var(--colorGrayLighter));
+      .nav-links.open { display: flex; }
+
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .hero-stats {
+        grid-template-columns: 1fr;
       }
 
-      a {
-        margin: 0;
-        font-weight: 600;
-        color: rgb(var(--colorTealAction));
-        text-decoration-skip-ink: all;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 2px;
-        text-decoration-color: rgb(var(--colorTealAction) / 0.5);
-        transition: text-decoration-color 0.15s ease-in-out;
-      }
+      .section { padding: 70px 0; }
+      .hero { padding-top: 78px; }
+      .hero h1 { font-size: 2.45rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="Main header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">Suresh <span>Krishna</span></a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰ <span class="sr-only">Toggle navigation</span></button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation"></nav>
+    </div>
+  </header>
 
-      a:hover,
-      a:focus-visible {
-        text-decoration-color: rgb(var(--colorTealAction));
-      }
+  <main id="app"></main>
 
-      p:last-of-type {
-        margin-bottom: 0;
-      }
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong id="footerName"></strong>
+        <p class="muted" id="footerLine" style="margin: 6px 0 0;"></p>
+      </div>
+      <div class="footer-links" id="footerLinks"></div>
+    </div>
+  </footer>
 
-      hr {
-        border: 0;
-        height: 1px;
-        background: rgb(var(--colorHr));
-        margin-top: 16px;
-        margin-bottom: 16px;
-      }
+  <div class="modal" id="sampleModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      <div class="modal-preview" id="modalPreview"></div>
+      <div class="modal-body">
+        <h3 id="modalTitle"></h3>
+        <p id="modalText" class="muted"></p>
+      </div>
+    </div>
+  </div>
 
-      .your-site {
-        font-size: 0.875rem;
-      }
-    </style>
-  </head>
-  <body>
+  <script>
+    const portfolioData = {
+      personal: {
+        name: "Suresh Krishna M",
+        title: "Digital Marketing Executive",
+        tagline: "Supporting B2B growth through paid ads, SEO, WordPress, and digital promotions.",
+        intro: "Digital Marketing Executive with practical experience in B2B promotions, Meta Ads, Google Ads, SEO and keyword optimization, WordPress, email marketing, Canva design, and landing page support.",
+        location: "Madurai, India",
+        phone: "7305811343",
+        email: "msureshkrishna2001@gmail.com",
+        linkedin: "https://www.linkedin.com/in/msureshkrishna",
+        whatsapp: "https://wa.me/917305811343",
+        resumeFile: "assets/suresh-krishna-resume.pdf"
+      },
+      navigation: [
+        { label: "Home", href: "#home" },
+        { label: "About", href: "#about" },
+        { label: "Skills", href: "#skills" },
+        { label: "Experience", href: "#experience" },
+        { label: "Tools", href: "#tools" },
+        { label: "Work Samples", href: "#samples" },
+        { label: "Contact", href: "#contact" }
+      ],
+      heroStats: [
+        { title: "Role Focus", text: "B2B digital promotions and lead support" },
+        { title: "Core Platforms", text: "Meta Ads, Google Ads, WordPress, SEO" },
+        { title: "Creative Support", text: "Canva designs and landing page updates" },
+        { title: "Based In", text: "Madurai, India" }
+      ],
+      about: {
+        summary: "Digital marketer with hands-on experience supporting online promotions, website updates, lead generation activities, and business visibility through multi-channel digital campaigns. Comfortable working across ad platforms, websites, content improvements, and marketing follow-ups for B2B-focused businesses.",
+        points: [
+          "Worked on digital marketing activities for export-oriented and B2B-focused businesses.",
+          "Supported campaign execution across Meta Ads, Google Ads, SEO, and email marketing.",
+          "Handled WordPress updates, landing page support, and Canva-based promotional creatives.",
+          "Interested in building practical, result-oriented digital experiences for business growth."
+        ]
+      },
+      skills: [
+        "B2B Promotions",
+        "Meta Ads",
+        "Google Ads",
+        "SEO and Keyword Optimization",
+        "WordPress",
+        "Email Marketing",
+        "Canva Designs",
+        "Landing Page"
+      ],
+      experience: {
+        company: "Rajexim Group of Companies",
+        role: "Digital Marketing Executive",
+        duration: "June 2024 – Present",
+        points: [
+          "Managed product promotions and digital activities across B2B portals.",
+          "Supported product listing optimization and online visibility improvements for business promotions.",
+          "Planned and executed Meta Ads campaigns for lead generation and brand reach.",
+          "Supported Google Ads campaigns for business promotions and inquiry generation.",
+          "Worked on SEO activities including keyword optimization, on-page updates, and website content improvements.",
+          "Developed and maintained WordPress websites and landing pages for marketing purposes.",
+          "Contributed to email marketing campaigns for customer communication and follow-up.",
+          "Assisted in campaign tracking, digital performance monitoring, and reporting."
+        ]
+      },
+      tools: [
+        {
+          title: "Advertising",
+          items: ["Meta Ads Manager", "Google Ads"]
+        },
+        {
+          title: "SEO",
+          items: ["Google Search Console", "SEMrush", "Ahrefs"]
+        },
+        {
+          title: "Web",
+          items: ["WordPress", "Divi", "Elementor", "WooCommerce"]
+        },
+        {
+          title: "Analytics",
+          items: ["Google Analytics"]
+        },
+        {
+          title: "Creative",
+          items: ["Canva", "Figma"]
+        }
+      ],
+      leadership: [
+        "Supervised and guided internship students in digital marketing activities.",
+        "Supported training in SEO, Meta Ads, and WordPress-related tasks.",
+        "Class Representative for B.E. CSE for 4 years.",
+        "Coordinated with faculty and supported academic and departmental activities."
+      ],
+      education: {
+        degree: "B.E. Computer Science Engineering",
+        institution: "Faculty of Engineering and Technology, Annamalai University, Chidambaram",
+        duration: "Aug 2019 – April 2023"
+      },
+      certification: {
+        name: "Digital Marketing Specialist – Udemy",
+        status: "In Progress"
+      },
+      samples: [
+        {
+          title: "Meta Ads Campaigns",
+          description: "Portfolio space for ad screenshots, campaign setup, targeting summary, and conversation-focused outcomes.",
+          preview: "Replace with your Meta Ads screenshot"
+        },
+        {
+          title: "Google Ads Campaigns",
+          description: "Use this section to display campaign structure, ad goals, landing page focus, and business promotion work.",
+          preview: "Replace with your Google Ads screenshot"
+        },
+        {
+          title: "SEO Work",
+          description: "Show website optimization tasks, keyword-focused updates, on-page improvements, and content support examples.",
+          preview: "Replace with your SEO work screenshot"
+        },
+        {
+          title: "WordPress Website Updates",
+          description: "Add screenshots of website sections, page improvements, banners, or admin-side update work completed in WordPress.",
+          preview: "Replace with your WordPress screenshot"
+        },
+        {
+          title: "Landing Page Work",
+          description: "Display landing page layouts, CTA sections, forms, or promotional page support done for campaigns.",
+          preview: "Replace with your landing page screenshot"
+        },
+        {
+          title: "B2B Portal Promotions",
+          description: "Use this card for listing work, portal product promotion screenshots, and digital activity proof from B2B portals.",
+          preview: "Replace with your B2B portal screenshot"
+        }
+      ],
+      contactNote: "Open to digital marketing roles, portfolio discussions, and professional opportunities.",
+      footerLine: "Built to present skills, work samples, and professional experience in a clean digital format."
+    };
+
+    const app = document.getElementById('app');
+    const navLinks = document.getElementById('navLinks');
+    const footerLinks = document.getElementById('footerLinks');
+    const footerName = document.getElementById('footerName');
+    const footerLine = document.getElementById('footerLine');
+
+    function renderNavigation() {
+      const navHTML = portfolioData.navigation.map(item => `
+        <a href="${item.href}">${item.label}</a>
+      `).join('');
+      navLinks.innerHTML = navHTML;
+      footerLinks.innerHTML = navHTML;
+      footerName.textContent = portfolioData.personal.name;
+      footerLine.textContent = portfolioData.footerLine;
+    }
+
+    function renderApp() {
+      app.innerHTML = `
+        <section class="hero" id="home">
+          <div class="container hero-grid">
+            <div class="reveal show">
+              <span class="pill">Digital Marketing Portfolio</span>
+              <h1>${portfolioData.personal.name}</h1>
+              <div class="hero-role">${portfolioData.personal.title}</div>
+              <p>${portfolioData.personal.tagline}</p>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="#samples">View Work Samples</a>
+                <a class="btn btn-secondary" href="#contact">Contact Me</a>
+                <a class="btn btn-dark" href="${portfolioData.personal.resumeFile}" target="_blank" rel="noopener">Download Resume</a>
+              </div>
+            </div>
+            <div class="hero-card reveal show" aria-label="Professional summary card">
+              <h3 style="margin-top:0;color:#fff;">Professional Focus</h3>
+              <p style="margin:0;color:#cbd5e1;">${portfolioData.personal.intro}</p>
+              <div class="hero-stats">
+                ${portfolioData.heroStats.map(stat => `
+                  <div class="stat-box">
+                    <strong>${stat.title}</strong>
+                    <span>${stat.text}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="about">
+          <div class="container">
+            <div class="reveal">
+              <span class="pill">About Me</span>
+              <h2 class="section-title">A practical digital marketer focused on business visibility and campaign support</h2>
+              <p class="section-subtitle">A clean portfolio summary based on your current role, core skills, and digital marketing responsibilities.</p>
+            </div>
+            <div class="grid-2">
+              <article class="card reveal">
+                <h3>Professional Summary</h3>
+                <p>${portfolioData.about.summary}</p>
+              </article>
+              <article class="card reveal">
+                <h3>Highlights</h3>
+                <ul class="about-list">
+                  ${portfolioData.about.points.map(point => `<li>${point}</li>`).join('')}
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="skills">
+          <div class="container">
+            <div class="reveal">
+              <span class="pill">Skills & Expertise</span>
+              <h2 class="section-title">Core areas I work on</h2>
+              <p class="section-subtitle">Focused on the exact skill set you asked to show on the website.</p>
+            </div>
+            <div class="grid-4 skills-grid">
+              ${portfolioData.skills.map(skill => `
+                <article class="card reveal">
+                  <div>${skill}</div>
+                </article>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="experience">
+          <div class="container">
+            <div class="reveal">
+              <span class="pill">Work Experience</span>
+              <h2 class="section-title">Professional experience</h2>
+              <p class="section-subtitle">Presented in a recruiter-friendly format without exaggerated claims.</p>
+            </div>
+            <article class="card timeline-card reveal">
+              <span class="timeline-meta">${portfolioData.experience.duration}</span>
+              <h3>${portfolioData.experience.role}</h3>
+              <p class="muted" style="margin-top:-2px;font-weight:700;">${portfolioData.experience.company}</p>
+              <ul class="experience-list">
+                ${portfolioData.experience.points.map(point => `<li>${point}</li>`).join('')}
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="tools">
+          <div class="container">
+            <div class="reveal">
+              <span class="pill">Tools & Platforms</span>
+              <h2 class="section-title">Platforms used in my work</h2>
+              <p class="section-subtitle">Grouped for quick scanning by recruiters and clients.</p>
+            </div>
+            <div class="grid-3">
+              ${portfolioData.tools.map(group => `
+                <article class="card reveal">
+                  <div class="tool-group-title">${group.title}</div>
+                  <div class="tags">
+                    ${group.items.map(item => `<span class="tag">${item}</span>`).join('')}
+                  </div>
+                </article>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="leadership">
+          <div class="container">
+            <div class="reveal">
+              <span class="pill">Leadership Highlights</span>
+              <h2 class="section-title">Team support and coordination experience</h2>
+            </div>
+            <article class="card reveal">
+              <ul class="highlights-list">
+                ${portfolioData.leadership.map(item => `<li>${item}</li>`).join('')}
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="education">
+          <div class="container">
+            <div class="grid-2">
+              <article class="card reveal">
+                <span class="pill">Education</span>
+                <h2 class="section-title" style="font-size:1.7rem;margin-top:18px;">${portfolioData.education.degree}</h2>
+                <p>${portfolioData.education.institution}</p>
+                <p class="muted">${portfolioData.education.duration}</p>
+              </article>
+              <article class="card reveal">
+                <span class="pill">Certification</span>
+                <h2 class="section-title" style="font-size:1.7rem;margin-top:18px;">${portfolioData.certification.name}</h2>
+                <p class="muted">${portfolioData.certification.status}</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="samples">
+          <div class="container">
+            <div class="reveal">
+              <span class="pill">Work Samples</span>
+              <h2 class="section-title">Portfolio highlights and screenshot-based proof</h2>
+              <p class="section-subtitle">Each card is ready for your screenshots. Replace the placeholders with your real work samples.</p>
+            </div>
+            <div class="grid-3">
+              ${portfolioData.samples.map((sample, index) => `
+                <article class="card sample-card reveal">
+                  <div class="sample-thumb" aria-label="${sample.title} placeholder">${sample.preview}</div>
+                  <div class="sample-body">
+                    <h3>${sample.title}</h3>
+                    <p>${sample.description}</p>
+                    <div class="sample-actions">
+                      <button class="btn btn-secondary sample-view" data-index="${index}">View Details</button>
+                    </div>
+                  </div>
+                </article>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <div class="container">
+            <article class="card contact-card reveal">
+              <span class="pill" style="background:rgba(255,255,255,0.12);color:#fff;border-color:rgba(255,255,255,0.18);">Contact</span>
+              <h2 class="section-title" style="color:#fff;margin-top:18px;">Let’s connect</h2>
+              <p class="section-subtitle" style="color:#cbd5e1;">${portfolioData.contactNote}</p>
+              <div class="grid-2">
+                <div>
+                  <ul class="contact-list">
+                    <li>Location: ${portfolioData.personal.location}</li>
+                    <li>Phone: <a href="tel:${portfolioData.personal.phone}">${portfolioData.personal.phone}</a></li>
+                    <li>Email: <a href="mailto:${portfolioData.personal.email}">${portfolioData.personal.email}</a></li>
+                    <li>LinkedIn: <a href="${portfolioData.personal.linkedin}" target="_blank" rel="noopener">linkedin.com/in/msureshkrishna</a></li>
+                  </ul>
+                </div>
+                <div class="btn-row">
+                  <a class="btn btn-primary" href="mailto:${portfolioData.personal.email}">Email Me</a>
+                  <a class="btn btn-secondary" href="${portfolioData.personal.whatsapp}" target="_blank" rel="noopener">WhatsApp Me</a>
+                  <a class="btn btn-dark" href="${portfolioData.personal.linkedin}" target="_blank" rel="noopener">LinkedIn Profile</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      `;
+    }
+
+    renderNavigation();
+    renderApp();
+
+    const navToggle = document.getElementById('navToggle');
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navAnchorMap = [...document.querySelectorAll('.nav-links a')];
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.getAttribute('id');
+        navAnchorMap.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      });
+    }, { threshold: 0.55 });
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    const modal = document.getElementById('sampleModal');
+    const modalPreview = document.getElementById('modalPreview');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const modalClose = document.getElementById('modalClose');
+
+    function openModal(sample) {
+      modalPreview.textContent = sample.preview;
+      modalTitle.textContent = sample.title;
+      modalText.textContent = sample.description;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.sample-view').forEach(button => {
+      button.addEventListener('click', () => {
+        const sample = portfolioData.samples[Number(button.dataset.index)];
+        openModal(sample);
+      });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+  </script>
+</body>
+</html>
