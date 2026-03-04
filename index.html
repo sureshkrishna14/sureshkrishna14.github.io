@@ -1,777 +1,894 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Suresh Krishna M | Digital Marketing Executive</title>
-  <meta name="description" content="Portfolio website of Suresh Krishna M, Digital Marketing Executive specializing in B2B promotions, Meta Ads, Google Ads, SEO, WordPress, email marketing, Canva designs, and landing pages." />
-  <meta property="og:title" content="Suresh Krishna M | Digital Marketing Executive" />
-  <meta property="og:description" content="Supporting B2B growth through paid ads, SEO, WordPress, and digital promotions." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/profile-placeholder.jpg" />
-  <style>
-    :root {
-      --bg-1: #f8fafc;
-      --bg-2: #f1f5f9;
-      --bg-3: #eef2ff;
-      --bg-4: #ecfeff;
-      --text: #0f172a;
-      --muted: #475569;
-      --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.78);
-      --glass-strong: rgba(255, 255, 255, 0.9);
-      --border: rgba(148, 163, 184, 0.22);
-      --purple: #1d4ed8;
-      --pink: #0ea5e9;
-      --blue: #1d4ed8;
-      --cyan: #06b6d4;
-      --deep: #0b1220;
-      --shadow: 0 18px 50px rgba(76, 29, 149, 0.14);
-      --radius: 24px;
-      --max-width: 1180px;
-      --transition: 0.28s ease;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 12% 10%, rgba(14, 165, 233, 0.10), transparent 28%),
-        radial-gradient(circle at 88% 12%, rgba(29, 78, 216, 0.10), transparent 30%),
-        linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 35%, var(--bg-3) 70%, var(--bg-4) 100%);
-      line-height: 1.6;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
-
-    .container {
-      width: min(var(--max-width), calc(100% - 2rem));
-      margin: 0 auto;
-    }
-
-    .section { padding: 88px 0; }
-
-    .section-title {
-      font-size: clamp(1.95rem, 2.3vw, 2.9rem);
-      line-height: 1.12;
-      margin: 0 0 14px;
-      color: var(--text);
-      letter-spacing: -0.03em;
-    }
-
-    .section-subtitle {
-      max-width: 760px;
-      margin: 0 0 34px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      background: linear-gradient(135deg, rgba(29, 78, 216, 0.10), rgba(14, 165, 233, 0.10));
-      color: #1d4ed8;
-      border: 1px solid rgba(29, 78, 216, 0.16);
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 0.92rem;
-      box-shadow: 0 8px 20px rgba(29, 78, 216, 0.06);
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 22px;
-      border-radius: 16px;
-      font-weight: 700;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
-    }
-
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-3px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
-      color: #fff;
-      box-shadow: 0 16px 32px rgba(29, 78, 216, 0.18);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.75);
-      color: var(--text);
-      border-color: rgba(124, 58, 237, 0.14);
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-dark {
-      background: linear-gradient(135deg, #111827, #312e81);
-      color: #fff;
-      box-shadow: 0 16px 32px rgba(30, 27, 75, 0.18);
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
-      background: rgba(255, 255, 255, 0.55);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.34);
-    }
-
-    .nav-wrap {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      position: relative;
-    }
-
-    .brand {
-      font-size: 1.08rem;
-      font-weight: 900;
-      color: var(--deep);
-      letter-spacing: 0.2px;
-    }
-
-    .brand span {
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .nav-toggle {
-      display: none;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid rgba(124, 58, 237, 0.14);
-      border-radius: 12px;
-      padding: 10px 12px;
-      cursor: pointer;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-weight: 700;
-      transition: color var(--transition);
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--purple);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #0b1220 0%, #111827 100%);
-      color: #e2e8f0;
-      padding: 96px 0 74px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -10% -40px auto;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
-      filter: blur(12px);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.7rem, 4.5vw, 5rem);
-      line-height: 1.03;
-      margin: 18px 0 14px;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-role {
-      font-size: 1.14rem;
-      font-weight: 800;
-      color: #cbd5e1;
-      margin-bottom: 12px;
-    }
-
-    .hero p {
-      color: #cbd5e1;
-      max-width: 640px;
-      margin: 0 0 28px;
-      font-size: 1.04rem;
-    }
-
-    .hero-card,
-    .card {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 22px 56px rgba(0, 0, 0, 0.22);
-    }
-
-    .hero-card h3,
-    .hero-card p { color: #f8fafc; }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .stat-box {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .stat-box strong {
-      display: block;
-      font-size: 1.02rem;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-
-    .stat-box span {
-      color: #cbd5e1;
-      font-size: 0.95rem;
-    }
-
-    .grid-2,
-    .grid-3,
-    .grid-4 {
-      display: grid;
-      gap: 22px;
-    }
-
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
-    .card h3,
-    .card h4 {
-      margin: 0 0 10px;
-      line-height: 1.2;
-      color: var(--deep);
-    }
-
-    .card p,
-    .card li,
-    .muted { color: var(--muted); }
-
-    .about-list,
-    .experience-list,
-    .highlights-list,
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 12px;
-    }
-
-    .about-list li,
-    .experience-list li,
-    .highlights-list li,
-    .contact-list li {
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .about-list li::before,
-    .experience-list li::before,
-    .highlights-list li::before,
-    .contact-list li::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      position: absolute;
-      left: 0;
-      top: 10px;
-    }
-
-    .skills-grid .card {
-      text-align: center;
-      font-weight: 800;
-      transition: transform var(--transition), box-shadow var(--transition);
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72));
-      border: 1px solid rgba(148, 163, 184, 0.18);
-    }
-
-    .skills-grid .card:nth-child(1) { background: linear-gradient(135deg, rgba(219,234,254,0.95), rgba(255,255,255,0.78)); }
-    .skills-grid .card:nth-child(2) { background: linear-gradient(135deg, rgba(207,250,254,0.95), rgba(255,255,255,0.78)); }
-    .skills-grid .card:nth-child(3) { background: linear-gradient(135deg, rgba(224,231,255,0.95), rgba(255,255,255,0.78)); }
-    .skills-grid .card:nth-child(4) { background: linear-gradient(135deg, rgba(226,232,240,0.95), rgba(255,255,255,0.78)); }
-    .skills-grid .card:nth-child(5) { background: linear-gradient(135deg, rgba(219,234,254,0.95), rgba(255,255,255,0.78)); }
-    .skills-grid .card:nth-child(6) { background: linear-gradient(135deg, rgba(207,250,254,0.95), rgba(255,255,255,0.78)); }
-    .skills-grid .card:nth-child(7) { background: linear-gradient(135deg, rgba(224,231,255,0.95), rgba(255,255,255,0.78)); }
-    .skills-grid .card:nth-child(8) { background: linear-gradient(135deg, rgba(226,232,240,0.95), rgba(255,255,255,0.78)); }
-
-    .skills-grid .card:hover,
-    .sample-card:hover,
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 58px rgba(124, 58, 237, 0.16);
-    }
-
-    .timeline-meta {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--purple);
-      font-weight: 800;
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(236, 72, 153, 0.1));
-      padding: 8px 12px;
-      border-radius: 999px;
-    }
-
-    .tool-group-title {
-      font-size: 1rem;
-      font-weight: 900;
-      margin-bottom: 16px;
-      color: var(--deep);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .tag {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(124, 58, 237, 0.12);
-      color: var(--deep);
-      font-weight: 700;
-      font-size: 0.94rem;
-    }
-
-    .sample-card {
-      overflow: hidden;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sample-thumb {
-      aspect-ratio: 16 / 10;
-      background: linear-gradient(135deg, rgba(29, 78, 216, 0.18) 0%, rgba(14, 165, 233, 0.18) 55%, rgba(255,255,255,0.65) 100%);
-      border-bottom: 1px solid rgba(148,163,184,0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #0b1220;
-      font-weight: 900;
-      font-size: 1rem;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .sample-body {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      flex: 1;
-    }
-
-    .sample-actions { margin-top: auto; }
-
-    .contact-card {
-      background: linear-gradient(135deg, #0b1220 0%, #0f1b34 60%, #111827 100%);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 22px 60px rgba(2, 6, 23, 0.32);
-    }
-
-    .contact-card .section-title,
-    .contact-card h3,
-    .contact-card p,
-    .contact-card li,
-    .contact-card a,
-    .contact-card .section-subtitle {
-      color: #fdf4ff;
-    }
-
-    .contact-card .contact-list li::before {
-      background: linear-gradient(135deg, #fde68a, #bfdbfe);
-    }
-
-    .contact-link,
-    .contact-inline {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .icon {
-      width: 20px;
-      height: 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 20px;
-    }
-
-    .icon svg {
-      width: 20px;
-      height: 20px;
-      display: block;
-      fill: currentColor;
-    }
-
-    .contact-actions .btn {
-      min-width: 200px;
-    }
-
-    .site-footer {
-      padding: 24px 0 42px;
-      background: transparent;
-    }
-
-    .footer-wrap {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .footer-wrap strong {
-      color: var(--deep);
-      font-size: 1rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(17, 24, 39, 0.72);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      z-index: 120;
-    }
-
-    .modal.open { display: flex; }
-
-    .modal-dialog {
-      width: min(760px, 100%);
-      background: rgba(255,255,255,0.88);
-      border: 1px solid rgba(255,255,255,0.45);
-      backdrop-filter: blur(16px);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 25px 60px rgba(2, 6, 23, 0.28);
-      position: relative;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      width: 42px;
-      height: 42px;
-      border: none;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.95);
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    .modal-preview {
-      min-height: 280px;
-      background: linear-gradient(135deg, #f5d0fe 0%, #fde68a 46%, #bfdbfe 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px;
-      text-align: center;
-      font-weight: 900;
-      color: #4c1d95;
-      font-size: 1.25rem;
-    }
-
-    .modal-body { padding: 24px; }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .grid-2,
-      .grid-3,
-      .grid-4 {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 760px) {
-      .nav-toggle { display: inline-flex; }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        left: 1rem;
-        right: 1rem;
-        top: calc(100% + 10px);
-        background: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(124, 58, 237, 0.12);
-        border-radius: 18px;
-        padding: 16px;
-        box-shadow: var(--shadow);
-        flex-direction: column;
-        align-items: flex-start;
-        backdrop-filter: blur(12px);
-      }
-
-      .nav-links.open { display: flex; }
-
-      .grid-2,
-      .grid-3,
-      .grid-4,
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .section { padding: 72px 0; }
-      .hero { padding-top: 84px; }
-      .hero h1 { font-size: 2.5rem; }
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header" aria-label="Main header">
-    <div class="container nav-wrap">
-      <a href="#home" class="brand">Suresh <span>Krishna</span></a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰ <span class="sr-only">Toggle navigation</span></button>
-      <nav class="nav-links" id="navLinks" aria-label="Primary navigation"></nav>
-    </div>
-  </header>
-
-  <main id="app"></main>
-
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <div>
-        <strong id="footerName"></strong>
-        <p class="muted" id="footerLine" style="margin: 8px 0 0;"></p>
-        <p class="muted" style="margin: 6px 0 0; font-weight: 700;">Digital Marketing • B2B Promotions • Paid Ads • WordPress</p>
-      </div>
-    </div>
-  </footer>
-
-  <div class="modal" id="sampleModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
-    <div class="modal-dialog">
-      <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
-      <div class="modal-preview" id="modalPreview"></div>
-      <div class="modal-body">
-        <h3 id="modalTitle"></h3>
-        <p id="modalText" class="muted"></p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const portfolioData = {
-      personal: {
-        name: "Suresh Krishna M",
-        title: "Digital Marketing Executive",
-        tagline: "Supporting B2B growth through paid ads, SEO, WordPress, and digital promotions.",
-        intro: "Digital Marketing Executive with practical experience in B2B promotions, Meta Ads, Google Ads, SEO and keyword optimization, WordPress, email marketing, Canva design, and landing page support.",
-        location: "Madurai, India",
-        phone: "7305811343",
-        email: "msureshkrishna2001@gmail.com",
-        linkedin: "https://www.linkedin.com/in/msureshkrishna",
-        whatsapp: "https://wa.me/917305811343",
-        resumeFile: "assets/suresh-krishna-resume.pdf"
-      },
-      navigation: [
-        { label: "Home", href: "#home" },
-        { label: "About", href: "#about" },
-        { label: "Skills", href: "#skills" },
-        { label: "Experience", href: "#experience" },
-        { label: "Tools", href: "#tools" },
-        { label: "Work Samples", href: "#samples" },
-        { label: "Contact", href: "#contact" }
-      ],
-      heroStats: [
-        { title: "Focus Area", text: "B2B promotions and digital support" },
-        { title: "Core Platforms", text: "Meta Ads, Google Ads, WordPress, SEO" },
-        { title: "Creative Work", text: "Canva designs and landing pages" },
-        { title: "Location", text: "Madurai, India" }
-      ],
-      about: {
-        summary: "Digital marketer with hands-on experience supporting online promotions, website updates, lead generation activities, and business visibility through multi-channel digital campaigns. Comfortable working across ad platforms, websites, content improvements, and marketing follow-ups for B2B-focused businesses.",
-        points: [
-          "Worked on digital marketing activities for export-oriented and B2B-focused businesses.",
-          "Supported campaign execution across Meta Ads, Google Ads, SEO, and email marketing.",
-          "Handled WordPress updates, landing page support, and Canva-based promotional creatives.",
-          "Interested in building practical, clean, and business-focused digital experiences."
-        ]
-      },
-      skills: [
-        "B2B Promotions",
-        "Meta Ads",
-        "Google Ads",
-        "SEO and Keyword Optimization",
-        "WordPress",
-        "Email Marketing",
-        "Canva Designs",
-        "Landing Page"
-      ],
-      experience: {
-        company: "Rajexim Group of Companies",
-        role: "Digital Marketing Executive",
-        duration: "June 2024 – Present",
-        points: [
-          "Managed product promotions and digital activities across B2B portals.",
-          "Supported product listing optimization and online visibility improvements for business promotions.",
-          "Planned and executed Meta Ads campaigns for lead generation and brand reach.",
-          "Supported Google Ads campaigns for business promotions and inquiry generation.",
-          "Worked on SEO activities including keyword optimization, on-page updates, and website content improvements.",
-          "Developed and maintained WordPress websites and landing pages for marketing purposes.",
-          "Contributed to email marketing campaigns for customer communication and follow-up.",
-          "Assisted in campaign tracking, digital performance monitoring, and reporting."
-        ]
-      },
-      tools: [
-        { title: "Advertising", items: ["Meta Ads Manager", "Google Ads"] },
-        { title: "SEO", items: ["Google Search Console", "SEMrush", "Ahrefs"] },
-        { title: "Web", items: ["WordPress", "Divi", "Elementor"] },
-        { title: "Design", items: ["Canva"] }
-      ],
-      leadership: [
-        "Supervised and guided internship students in digital marketing activities.",
-        "Supported training in SEO, Meta Ads, and WordPress-related tasks.",
-        "Class Representative for B.E. CSE for 4 years.",
-        "Coordinated with faculty and supported academic and departmental activities."
-      ],
-      education: {
-        degree: "B.E. Computer Science Engineering",
-        institution: "Faculty of Engineering and Technology, Annamalai University, Chidambaram",
-        duration: "Aug 2019 – April 2023"
-      },
-      certification: {
-        name: "Digital Marketing Specialist – Udemy",
-        status: ""
-      },
-      samples: [
-        {
-          title: "Meta Ads Campaigns",
-          description: "Portfolio space for campaign screenshots, targeting summary, and business-oriented ad support examples.",
-          preview: "Replace with your Meta Ads screenshot"
-        },
-        {
-          title: "Google Ads Campaigns",
-          description: "Use this section to display campaign setup, ad purpose, landing page focus, and promotion work.",
-          preview: "Replace with your Google Ads screenshot"
-        },
-        {
-          title: "SEO Work",
-          description: "Show keyword-focused updates, content support, on-page edits, and website optimization tasks.",
-          preview: "Replace with your SEO work screenshot"
-        },
-        {
-          title: "WordPress Website Updates",
-          description: "Add screenshots of pages, banners, website sections, or admin-side update work done in WordPress.",
-          preview: "Replace with your WordPress screenshot"
-        },
-        {
-          title: "Landing Page Work",
-          description: "Display layouts, CTA sections, forms, or promotional landing pages used in campaigns.",
-          preview: "Replace with your landing page screenshot"
-        },
-        {
-          title: "B2B Portal Promotions",
-          description: "Use this card for listing work, portal promotion screenshots, and digital activity proof from B2B portals.",
-          preview: "Replace with your B2B portal screenshot"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suresh Krishna M | Digital Marketing Executive</title>
+    <meta name="description" content="Portfolio website of Suresh Krishna M, Digital Marketing Executive specializing in B2B promotions, Meta Ads, Google Ads, SEO, WordPress, email marketing, Canva designs, and landing pages." />
+    <meta property="og:title" content="Suresh Krishna M | Digital Marketing Executive" />
+    <meta property="og:description" content="Supporting B2B growth through paid ads, SEO, WordPress, and digital promotions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/profile-placeholder.jpg" />
+    <style>
+        :root {
+            --bg-1: #f8fafc;
+            --bg-2: #f1f5f9;
+            --bg-3: #eef2ff;
+            --bg-4: #ecfeff;
+            --text: #0f172a;
+            --muted: #475569;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.78);
+            --glass-strong: rgba(255, 255, 255, 0.9);
+            --border: rgba(148, 163, 184, 0.22);
+            --purple: #1d4ed8;
+            --pink: #0ea5e9;
+            --blue: #1d4ed8;
+            --cyan: #06b6d4;
+            --deep: #0b1220;
+            --shadow: 0 18px 50px rgba(76, 29, 149, 0.14);
+            --radius: 24px;
+            --max-width: 1180px;
+            --transition: 0.28s ease;
         }
-      ],
-      contactNote: "Open to digital marketing roles, portfolio discussions, and professional opportunities.",
-      footerLine: "Professional, recruiter-friendly portfolio layout with a clean look and subtle premium colors."
-    };
 
-    const app = document.getElementById('app');
-    const navLinks = document.getElementById('navLinks');
-    const footerName = document.getElementById('footerName');
-    const footerLine = document.getElementById('footerLine');
+        * {
+            box-sizing: border-box;
+        }
 
-    function renderNavigation() {
-      const navHTML = portfolioData.navigation.map(item => `<a href="${item.href}">${item.label}</a>`).join('');
-      navLinks.innerHTML = navHTML;
-      footerName.textContent = portfolioData.personal.name;
-      footerLine.textContent = portfolioData.footerLine;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    function renderApp() {
-      app.innerHTML = `
+        body {
+            margin: 0;
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 12% 10%, rgba(14, 165, 233, 0.10), transparent 28%),
+                radial-gradient(circle at 88% 12%, rgba(29, 78, 216, 0.10), transparent 30%),
+                linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 35%, var(--bg-3) 70%, var(--bg-4) 100%);
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(var(--max-width), calc(100% - 2rem));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 88px 0;
+        }
+
+        .section-title {
+            font-size: clamp(1.95rem, 2.3vw, 2.9rem);
+            line-height: 1.12;
+            margin: 0 0 14px;
+            color: var(--text);
+            letter-spacing: -0.03em;
+        }
+
+        .section-subtitle {
+            max-width: 760px;
+            margin: 0 0 34px;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: linear-gradient(135deg, rgba(29, 78, 216, 0.10), rgba(14, 165, 233, 0.10));
+            color: #1d4ed8;
+            border: 1px solid rgba(29, 78, 216, 0.16);
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 0.92rem;
+            box-shadow: 0 8px 20px rgba(29, 78, 216, 0.06);
+        }
+
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 22px;
+            border-radius: 16px;
+            font-weight: 700;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+        }
+
+        .btn:hover,
+        .btn:focus-visible {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+            color: #fff;
+            box-shadow: 0 16px 32px rgba(29, 78, 216, 0.18);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.75);
+            color: var(--text);
+            border-color: rgba(124, 58, 237, 0.14);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-dark {
+            background: linear-gradient(135deg, #111827, #312e81);
+            color: #fff;
+            box-shadow: 0 16px 32px rgba(30, 27, 75, 0.18);
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.55);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+        }
+
+        .nav-wrap {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            position: relative;
+        }
+
+        .brand {
+            font-size: 1.08rem;
+            font-weight: 900;
+            color: var(--deep);
+            letter-spacing: 0.2px;
+        }
+
+        .brand span {
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(124, 58, 237, 0.14);
+            border-radius: 12px;
+            padding: 10px 12px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-weight: 700;
+            transition: color var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--purple);
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0b1220 0%, #111827 100%);
+            color: #e2e8f0;
+            padding: 96px 0 74px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: auto -10% -40px auto;
+            width: 220px;
+            height: 220px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+            filter: blur(12px);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.12fr 0.88fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.7rem, 4.5vw, 5rem);
+            line-height: 1.03;
+            margin: 18px 0 14px;
+            letter-spacing: -0.04em;
+        }
+
+        .hero-role {
+            font-size: 1.14rem;
+            font-weight: 800;
+            color: #cbd5e1;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 640px;
+            margin: 0 0 28px;
+            font-size: 1.04rem;
+        }
+
+        .hero-card,
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(16px);
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 22px 56px rgba(0, 0, 0, 0.22);
+        }
+
+        .hero-card h3,
+        .hero-card p {
+            color: #f8fafc;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .stat-box {
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .stat-box strong {
+            display: block;
+            font-size: 1.02rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .stat-box span {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .grid-2,
+        .grid-3,
+        .grid-4 {
+            display: grid;
+            gap: 22px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .card h3,
+        .card h4 {
+            margin: 0 0 10px;
+            line-height: 1.2;
+            color: var(--deep);
+        }
+
+        .card p,
+        .card li,
+        .muted {
+            color: var(--muted);
+        }
+
+        .about-list,
+        .experience-list,
+        .highlights-list,
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .about-list li,
+        .experience-list li,
+        .highlights-list li,
+        .contact-list li {
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .about-list li::before,
+        .experience-list li::before,
+        .highlights-list li::before,
+        .contact-list li::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+
+        .skills-grid .card {
+            text-align: center;
+            font-weight: 800;
+            transition: transform var(--transition), box-shadow var(--transition);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
+            border: 1px solid rgba(148, 163, 184, 0.18);
+        }
+
+        .skills-grid .card:nth-child(1) {
+            background: linear-gradient(135deg, rgba(219, 234, 254, 0.95), rgba(255, 255, 255, 0.78));
+        }
+
+        .skills-grid .card:nth-child(2) {
+            background: linear-gradient(135deg, rgba(207, 250, 254, 0.95), rgba(255, 255, 255, 0.78));
+        }
+
+        .skills-grid .card:nth-child(3) {
+            background: linear-gradient(135deg, rgba(224, 231, 255, 0.95), rgba(255, 255, 255, 0.78));
+        }
+
+        .skills-grid .card:nth-child(4) {
+            background: linear-gradient(135deg, rgba(226, 232, 240, 0.95), rgba(255, 255, 255, 0.78));
+        }
+
+        .skills-grid .card:nth-child(5) {
+            background: linear-gradient(135deg, rgba(219, 234, 254, 0.95), rgba(255, 255, 255, 0.78));
+        }
+
+        .skills-grid .card:nth-child(6) {
+            background: linear-gradient(135deg, rgba(207, 250, 254, 0.95), rgba(255, 255, 255, 0.78));
+        }
+
+        .skills-grid .card:nth-child(7) {
+            background: linear-gradient(135deg, rgba(224, 231, 255, 0.95), rgba(255, 255, 255, 0.78));
+        }
+
+        .skills-grid .card:nth-child(8) {
+            background: linear-gradient(135deg, rgba(226, 232, 240, 0.95), rgba(255, 255, 255, 0.78));
+        }
+
+        .skills-grid .card:hover,
+        .sample-card:hover,
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 58px rgba(124, 58, 237, 0.16);
+        }
+
+        .timeline-meta {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: var(--purple);
+            font-weight: 800;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(236, 72, 153, 0.1));
+            padding: 8px 12px;
+            border-radius: 999px;
+        }
+
+        .tool-group-title {
+            font-size: 1rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: var(--deep);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(124, 58, 237, 0.12);
+            color: var(--deep);
+            font-weight: 700;
+            font-size: 0.94rem;
+        }
+
+        .sample-card {
+            overflow: hidden;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sample-thumb {
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, rgba(29, 78, 216, 0.18) 0%, rgba(14, 165, 233, 0.18) 55%, rgba(255, 255, 255, 0.65) 100%);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b1220;
+            font-weight: 900;
+            font-size: 1rem;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sample-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .sample-actions {
+            margin-top: auto;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #0b1220 0%, #0f1b34 60%, #111827 100%);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 22px 60px rgba(2, 6, 23, 0.32);
+        }
+
+        .contact-card .section-title,
+        .contact-card h3,
+        .contact-card p,
+        .contact-card li,
+        .contact-card a,
+        .contact-card .section-subtitle {
+            color: #fdf4ff;
+        }
+
+        .contact-card .contact-list li::before {
+            background: linear-gradient(135deg, #fde68a, #bfdbfe);
+        }
+
+        .contact-link,
+        .contact-inline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 20px;
+        }
+
+        .icon svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+            fill: currentColor;
+        }
+
+        .contact-actions .btn {
+            min-width: 200px;
+        }
+
+        .site-footer {
+            padding: 24px 0 42px;
+            background: transparent;
+        }
+
+        .footer-wrap {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .footer-wrap strong {
+            color: var(--deep);
+            font-size: 1rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(17, 24, 39, 0.72);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            z-index: 120;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-dialog {
+            width: min(760px, 100%);
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(2, 6, 23, 0.28);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .modal-preview {
+            min-height: 280px;
+            background: linear-gradient(135deg, #f5d0fe 0%, #fde68a 46%, #bfdbfe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            text-align: center;
+            font-weight: 900;
+            color: #4c1d95;
+            font-size: 1.25rem;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        @media (max-width: 980px) {
+
+            .hero-grid,
+            .grid-2,
+            .grid-3,
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .nav-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                left: 1rem;
+                right: 1rem;
+                top: calc(100% + 10px);
+                background: rgba(255, 255, 255, 0.92);
+                border: 1px solid rgba(124, 58, 237, 0.12);
+                border-radius: 18px;
+                padding: 16px;
+                box-shadow: var(--shadow);
+                flex-direction: column;
+                align-items: flex-start;
+                backdrop-filter: blur(12px);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .grid-2,
+            .grid-3,
+            .grid-4,
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 72px 0;
+            }
+
+            .hero {
+                padding-top: 84px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header" aria-label="Main header">
+        <div class="container nav-wrap">
+            <a href="#home" class="brand">Suresh <span>Krishna</span></a>
+            <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">☰ <span class="sr-only">Toggle navigation</span></button>
+            <nav class="nav-links" id="navLinks" aria-label="Primary navigation"></nav>
+        </div>
+    </header>
+
+    <main id="app"></main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <div>
+                <strong id="footerName"></strong>
+                <p class="muted" id="footerLine" style="margin: 8px 0 0;"></p>
+                <p class="muted" style="margin: 6px 0 0; font-weight: 700;">Digital Marketing • B2B Promotions • Paid Ads • WordPress</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="sampleModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal-dialog">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+            <div class="modal-preview" id="modalPreview"></div>
+            <div class="modal-body">
+                <h3 id="modalTitle"></h3>
+                <p id="modalText" class="muted"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const portfolioData = {
+            personal: {
+                name: "Suresh Krishna M",
+                title: "Digital Marketing Executive",
+                tagline: "Supporting B2B growth through paid ads, SEO, WordPress, and digital promotions.",
+                intro: "Digital Marketing Executive with practical experience in B2B promotions, Meta Ads, Google Ads, SEO and keyword optimization, WordPress, email marketing, Canva design, and landing page support.",
+                location: "Madurai, India",
+                phone: "7305811343",
+                email: "msureshkrishna2001@gmail.com",
+                linkedin: "https://www.linkedin.com/in/msureshkrishna",
+                whatsapp: "https://wa.me/917305811343",
+                resumeFile: "assets/suresh-krishna-resume.pdf"
+            },
+            navigation: [{
+                    label: "Home",
+                    href: "#home"
+                },
+                {
+                    label: "About",
+                    href: "#about"
+                },
+                {
+                    label: "Skills",
+                    href: "#skills"
+                },
+                {
+                    label: "Experience",
+                    href: "#experience"
+                },
+                {
+                    label: "Tools",
+                    href: "#tools"
+                },
+                {
+                    label: "Work Samples",
+                    href: "#samples"
+                },
+                {
+                    label: "Contact",
+                    href: "#contact"
+                }
+            ],
+            heroStats: [{
+                    title: "Focus Area",
+                    text: "B2B promotions and digital support"
+                },
+                {
+                    title: "Core Platforms",
+                    text: "Meta Ads, Google Ads, WordPress, SEO"
+                },
+                {
+                    title: "Creative Work",
+                    text: "Canva designs and landing pages"
+                },
+                {
+                    title: "Location",
+                    text: "Madurai, India"
+                }
+            ],
+            about: {
+                summary: "Digital marketer with hands-on experience supporting online promotions, website updates, lead generation activities, and business visibility through multi-channel digital campaigns. Comfortable working across ad platforms, websites, content improvements, and marketing follow-ups for B2B-focused businesses.",
+                points: [
+                    "Worked on digital marketing activities for export-oriented and B2B-focused businesses.",
+                    "Supported campaign execution across Meta Ads, Google Ads, SEO, and email marketing.",
+                    "Handled WordPress updates, landing page support, and Canva-based promotional creatives.",
+                    "Interested in building practical, clean, and business-focused digital experiences."
+                ]
+            },
+            skills: [
+                "B2B Promotions",
+                "Meta Ads",
+                "Google Ads",
+                "SEO and Keyword Optimization",
+                "WordPress",
+                "Email Marketing",
+                "Canva Designs",
+                "Landing Page"
+            ],
+            experience: {
+                company: "Rajexim Group of Companies",
+                role: "Digital Marketing Executive",
+                duration: "June 2024 – Present",
+                points: [
+                    "Managed product promotions and digital activities across B2B portals.",
+                    "Supported product listing optimization and online visibility improvements for business promotions.",
+                    "Planned and executed Meta Ads campaigns for lead generation and brand reach.",
+                    "Supported Google Ads campaigns for business promotions and inquiry generation.",
+                    "Worked on SEO activities including keyword optimization, on-page updates, and website content improvements.",
+                    "Developed and maintained WordPress websites and landing pages for marketing purposes.",
+                    "Contributed to email marketing campaigns for customer communication and follow-up.",
+                    "Assisted in campaign tracking, digital performance monitoring, and reporting."
+                ]
+            },
+            tools: [{
+                    title: "Advertising",
+                    items: ["Meta Ads Manager", "Google Ads"]
+                },
+                {
+                    title: "SEO",
+                    items: ["Google Search Console", "SEMrush", "Ahrefs"]
+                },
+                {
+                    title: "Web",
+                    items: ["WordPress", "Divi", "Elementor"]
+                },
+                {
+                    title: "Design",
+                    items: ["Canva"]
+                }
+            ],
+            leadership: [
+                "Supervised and guided internship students in digital marketing activities.",
+                "Supported training in SEO, Meta Ads, and WordPress-related tasks.",
+                "Class Representative for B.E. CSE for 4 years.",
+                "Coordinated with faculty and supported academic and departmental activities."
+            ],
+            education: {
+                degree: "B.E. Computer Science Engineering",
+                institution: "Faculty of Engineering and Technology, Annamalai University, Chidambaram",
+                duration: "Aug 2019 – April 2023"
+            },
+            certification: {
+                name: "Digital Marketing Specialist – Udemy",
+                status: ""
+            },
+            samples: [{
+                    title: "Meta Ads Campaigns",
+                    description: "Portfolio space for campaign screenshots, targeting summary, and business-oriented ad support examples.",
+                    preview: "Replace with your Meta Ads screenshot"
+                },
+                {
+                    title: "Google Ads Campaigns",
+                    description: "Use this section to display campaign setup, ad purpose, landing page focus, and promotion work.",
+                    preview: "Replace with your Google Ads screenshot"
+                },
+                {
+                    title: "SEO Work",
+                    description: "Show keyword-focused updates, content support, on-page edits, and website optimization tasks.",
+                    preview: "Replace with your SEO work screenshot"
+                },
+                {
+                    title: "WordPress Website Updates",
+                    description: "Add screenshots of pages, banners, website sections, or admin-side update work done in WordPress.",
+                    preview: "Replace with your WordPress screenshot"
+                },
+                {
+                    title: "Landing Page Work",
+                    description: "Display layouts, CTA sections, forms, or promotional landing pages used in campaigns.",
+                    preview: "Replace with your landing page screenshot"
+                },
+                {
+                    title: "B2B Portal Promotions",
+                    description: "Use this card for listing work, portal promotion screenshots, and digital activity proof from B2B portals.",
+                    preview: "Replace with your B2B portal screenshot"
+                }
+            ],
+            contactNote: "Open to digital marketing roles, portfolio discussions, and professional opportunities.",
+            footerLine: "Professional, recruiter-friendly portfolio layout with a clean look and subtle premium colors."
+        };
+
+        const app = document.getElementById('app');
+        const navLinks = document.getElementById('navLinks');
+        const footerName = document.getElementById('footerName');
+        const footerLine = document.getElementById('footerLine');
+
+        function renderNavigation() {
+            const navHTML = portfolioData.navigation.map(item => `<a href="${item.href}">${item.label}</a>`).join('');
+            navLinks.innerHTML = navHTML;
+            footerName.textContent = portfolioData.personal.name;
+            footerLine.textContent = portfolioData.footerLine;
+        }
+
+        function renderApp() {
+            app.innerHTML = `
         <section class="hero" id="home">
           <div class="container hero-grid">
             <div class="reveal show">
@@ -880,7 +997,11 @@
         if (!entry.isIntersecting) return;
         const id = entry.target.getAttribute('id');
         navAnchorMap.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          link.classList.toggle('active', link.getAttribute('href') === `
+            #$ {
+                id
+            }
+            `);
         });
       });
     }, { threshold: 0.55 });
@@ -922,6 +1043,7 @@
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && modal.classList.contains('open')) closeModal();
     });
-  </script>
+    </script>
 </body>
+
 </html>
